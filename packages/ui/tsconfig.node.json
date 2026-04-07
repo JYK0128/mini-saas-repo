@@ -1,0 +1,9 @@
+{
+  "extends": "@repo/config/typescript/node",
+  "files": [
+    "eslint.config.js",
+    "stylelint.config.js",
+    "token-parser.js",
+    "vite.config.ts"
+  ]
+}

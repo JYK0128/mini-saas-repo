@@ -1,0 +1,12 @@
+{
+  "extends": "@repo/config/typescript/react",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": ["vite/client"]
+  },
+  "include": ["src", "vitest.shims.d.ts"],
+  "exclude": ["node_modules", "dist"]
+}
