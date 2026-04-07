@@ -1,0 +1,30 @@
+diff --git a/query/QueryBuilderHelper.js b/query/QueryBuilderHelper.js
+index 6a4624c8983d7dc8307e16b307c0354de73a38cb..497e4b8a08d8567e3c68e9bae0bcd0635614ef90 100644
+--- a/query/QueryBuilderHelper.js
++++ b/query/QueryBuilderHelper.js
+@@ -855,18 +855,22 @@ export class QueryBuilderHelper {
+       return field;
+     }
+     if (prop.fieldNameRaw) {
++      const rawValue = (typeof prop.fieldNameRaw === 'object' && prop.fieldNameRaw.sql)
++        ? prop.fieldNameRaw.sql
++        : prop.fieldNameRaw;
++
+       if (!always) {
+         return raw(
+-          prop.fieldNameRaw
++          rawValue
+             .replace(new RegExp(ALIAS_REPLACEMENT_RE + '\\.?', 'g'), '')
+             .replace(this.#platform.quoteIdentifier('') + '.', ''),
+         );
+       }
+       if (alias) {
+-        return raw(prop.fieldNameRaw.replace(new RegExp(ALIAS_REPLACEMENT_RE, 'g'), alias));
++        return raw(rawValue.replace(new RegExp(ALIAS_REPLACEMENT_RE, 'g'), alias));
+       }
+       /* v8 ignore next */
+-      return raw(prop.fieldNameRaw);
++      return raw(rawValue);
+     }
+     /* v8 ignore next */
+     return prop.fieldNames?.[idx] ?? field;

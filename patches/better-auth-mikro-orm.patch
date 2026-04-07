@@ -1,0 +1,139 @@
+diff --git a/lib/adapter.cjs b/lib/adapter.cjs
+index 3e91a766306fc379b2f58c7e25ff26746e44cd1b..81605a3924ec0df1a3e685a29e3c2c6ffc065924 100644
+--- a/lib/adapter.cjs
++++ b/lib/adapter.cjs
+@@ -62,7 +62,7 @@ function createAdapterUtils(orm) {
+       if (ownReferences.includes(prop2.kind) && prop2.name === fieldName) {
+         return true;
+       }
+-      if (prop2.kind === import_core.ReferenceKind.MANY_TO_ONE && (prop2.name === fieldName || prop2.fieldNames.includes(naming.propertyToColumnName(fieldName)))) {
++      if ((prop2.kind === import_core.ReferenceKind.MANY_TO_ONE || prop2.kind === import_core.ReferenceKind.ONE_TO_ONE) && (prop2.name === fieldName || prop2.fieldNames.includes(naming.propertyToColumnName(fieldName)))) {
+         return true;
+       }
+       return false;
+@@ -78,7 +78,7 @@ function createAdapterUtils(orm) {
+     if (ownReferences.includes(prop.kind)) {
+       return prop.name;
+     }
+-    if (prop.kind === import_core.ReferenceKind.MANY_TO_ONE) {
++    if (prop.kind === import_core.ReferenceKind.MANY_TO_ONE || prop.kind === import_core.ReferenceKind.ONE_TO_ONE) {
+       return naming.columnNameToProperty(naming.joinColumnName(prop.name));
+     }
+     createAdapterError(
+@@ -88,15 +88,15 @@ function createAdapterUtils(orm) {
+   const getReferencedPropertyName = (metadata2, prop) => getReferencedColumnName(metadata2.className, prop);
+   const getFieldPath = (metadata2, fieldName, throwOnShadowProps = false) => {
+     const prop = getPropertyMetadata(metadata2, fieldName);
+-    if (prop.persist === false && throwOnShadowProps) {
+-      createAdapterError(
+-        `Cannot serialize "${fieldName}" into path, because it cannot be persisted in "${metadata2.tableName}" table.`
+-      );
+-    }
++    // if (prop.persist === false && throwOnShadowProps) {
++    //   createAdapterError(
++    //     `Cannot serialize "${fieldName}" into path, because it cannot be persisted in "${metadata2.tableName}" table.`
++    //   );
++    // }
+     if (prop.kind === import_core.ReferenceKind.SCALAR || prop.kind === import_core.ReferenceKind.EMBEDDED) {
+       return [prop.name];
+     }
+-    if (prop.kind === import_core.ReferenceKind.MANY_TO_ONE) {
++    if (prop.kind === import_core.ReferenceKind.MANY_TO_ONE || prop.kind === import_core.ReferenceKind.ONE_TO_ONE) {
+       if (prop.referencedPKs.length > 1) {
+         createAdapterError(
+           `The "${fieldName}" field references to a table "${prop.name}" with complex primary key, which is not supported`
+@@ -109,6 +109,12 @@ function createAdapterUtils(orm) {
+     );
+   };
+   const normalizePropertyValue = (property, value) => {
++    if (typeof value === "string" && (property.type === "json" || property.type === "jsonb" || property.type === "Object")) {
++      try {
++        value = JSON.parse(value);
++      } catch (e) {
++      }
++    }
+     if (!property.targetMeta || property.kind === import_core.ReferenceKind.SCALAR || property.kind === import_core.ReferenceKind.EMBEDDED) {
+       return value;
+     }
+@@ -202,7 +208,7 @@ function createAdapterUtils(orm) {
+ }
+ 
+ // src/adapter.ts
+-var mikroOrmAdapter = (orm, { debugLogs, supportsJSON = true } = {}) => (0, import_adapters.createAdapter)({
++var mikroOrmAdapter = (orm, { debugLogs, supportsJSON = true } = {}) => (0, import_adapters.createAdapterFactory)({
+   config: {
+     debugLogs,
+     supportsJSON,
+diff --git a/lib/adapter.js b/lib/adapter.js
+index 1909ba9c5a27656ba577de1e064dbd0298f5b421..1724b1bfbc0e7dcd15ae5ec420f5e818bd071233 100644
+--- a/lib/adapter.js
++++ b/lib/adapter.js
+@@ -1,5 +1,5 @@
+ // src/adapter.ts
+-import { createAdapter } from "better-auth/adapters";
++import { createAdapterFactory } from "better-auth/adapters";
+ import { dset as dset2 } from "dset";
+ 
+ // src/utils/adapterUtils.ts
+@@ -36,7 +36,7 @@ function createAdapterUtils(orm) {
+       if (ownReferences.includes(prop2.kind) && prop2.name === fieldName) {
+         return true;
+       }
+-      if (prop2.kind === ReferenceKind.MANY_TO_ONE && (prop2.name === fieldName || prop2.fieldNames.includes(naming.propertyToColumnName(fieldName)))) {
++      if ((prop2.kind === ReferenceKind.MANY_TO_ONE || prop2.kind === ReferenceKind.ONE_TO_ONE) && (prop2.name === fieldName || prop2.fieldNames.includes(naming.propertyToColumnName(fieldName)))) {
+         return true;
+       }
+       return false;
+@@ -52,7 +52,7 @@ function createAdapterUtils(orm) {
+     if (ownReferences.includes(prop.kind)) {
+       return prop.name;
+     }
+-    if (prop.kind === ReferenceKind.MANY_TO_ONE) {
++    if (prop.kind === ReferenceKind.MANY_TO_ONE || prop.kind === ReferenceKind.ONE_TO_ONE) {
+       return naming.columnNameToProperty(naming.joinColumnName(prop.name));
+     }
+     createAdapterError(
+@@ -62,15 +62,15 @@ function createAdapterUtils(orm) {
+   const getReferencedPropertyName = (metadata2, prop) => getReferencedColumnName(metadata2.className, prop);
+   const getFieldPath = (metadata2, fieldName, throwOnShadowProps = false) => {
+     const prop = getPropertyMetadata(metadata2, fieldName);
+-    if (prop.persist === false && throwOnShadowProps) {
+-      createAdapterError(
+-        `Cannot serialize "${fieldName}" into path, because it cannot be persisted in "${metadata2.tableName}" table.`
+-      );
+-    }
++    // if (prop.persist === false && throwOnShadowProps) {
++    //   createAdapterError(
++    //     `Cannot serialize "${fieldName}" into path, because it cannot be persisted in "${metadata2.tableName}" table.`
++    //   );
++    // }
+     if (prop.kind === ReferenceKind.SCALAR || prop.kind === ReferenceKind.EMBEDDED) {
+       return [prop.name];
+     }
+-    if (prop.kind === ReferenceKind.MANY_TO_ONE) {
++    if (prop.kind === ReferenceKind.MANY_TO_ONE || prop.kind === ReferenceKind.ONE_TO_ONE) {
+       if (prop.referencedPKs.length > 1) {
+         createAdapterError(
+           `The "${fieldName}" field references to a table "${prop.name}" with complex primary key, which is not supported`
+@@ -83,6 +83,12 @@ function createAdapterUtils(orm) {
+     );
+   };
+   const normalizePropertyValue = (property, value) => {
++    if (typeof value === "string" && (property.type === "json" || property.type === "jsonb" || property.type === "Object")) {
++      try {
++        value = JSON.parse(value);
++      } catch (e) {
++      }
++    }
+     if (!property.targetMeta || property.kind === ReferenceKind.SCALAR || property.kind === ReferenceKind.EMBEDDED) {
+       return value;
+     }
+@@ -176,7 +182,7 @@ function createAdapterUtils(orm) {
+ }
+ 
+ // src/adapter.ts
+-var mikroOrmAdapter = (orm, { debugLogs, supportsJSON = true } = {}) => createAdapter({
++var mikroOrmAdapter = (orm, { debugLogs, supportsJSON = true } = {}) => createAdapterFactory({
+   config: {
+     debugLogs,
+     supportsJSON,
