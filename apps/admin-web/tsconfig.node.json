@@ -1,0 +1,9 @@
+{
+  "extends": "@repo/config/typescript/node",
+  "files": [
+    "vite.config.ts",
+    "eslint.config.js",
+    "orval.config.ts",
+    "stylelint.config.js"
+  ]
+}

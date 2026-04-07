@@ -1,0 +1,12 @@
+{
+  "extends": "@repo/config/typescript/react",
+  "compilerOptions": {
+    "types": ["vite/client"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
