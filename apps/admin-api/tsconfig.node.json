@@ -1,0 +1,9 @@
+{
+  "extends": "@repo/config/typescript/node",
+  "files": [
+    "jest.setup.ts",
+    "jest.config.ts",
+    "eslint.config.js",
+    "esbuild.config.js"
+  ]
+}

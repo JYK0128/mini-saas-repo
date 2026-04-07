@@ -1,0 +1,6 @@
+{
+  "HELLO": "Hello",
+  "TEST": {
+    "MSG": "This is a test message: {name}"
+  }
+}
