@@ -1,0 +1,41 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "set-up": {},
+
+    "pre-build": {
+      "dependsOn": ["set-up", "^pre-build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env.development"]
+    },
+    "pre-build:stg": {
+      "dependsOn": ["^pre-build:stg"],
+      "inputs": ["$TURBO_DEFAULT$", ".env.staging"]
+    },
+    "pre-build:prd": {
+      "dependsOn": ["^pre-build:prd"],
+      "inputs": ["$TURBO_DEFAULT$", ".env.production"]
+    },
+
+    "build": {
+      "dependsOn": ["pre-build", "^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env.development"]
+    },
+    "build:stg": {
+      "dependsOn": ["pre-build:stg", "^build:stg"],
+      "inputs": ["$TURBO_DEFAULT$", ".env.staging"]
+    },
+    "build:prd": {
+      "dependsOn": ["pre-build:prd", "^build:prd"],
+      "inputs": ["$TURBO_DEFAULT$", ".env.production"]
+    },
+
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },    
+    "lint": {},
+    "test": {
+      "dependsOn": ["^test"]
+    }
+  }
+}

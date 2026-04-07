@@ -1,0 +1,31 @@
+{
+  "name": "examples-monorepo",
+  "private": true,
+  "scripts": {
+    "set-up": "turbo run set-up",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint"
+  },
+  "devDependencies": {
+    "@swc/core": "1.15.18",
+    "@swc/jest": "0.2.39",
+    "jiti": "2.6.1",
+    "tsx": "4.21.0",
+    "turbo": "latest",
+    "typescript": "^5.9.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.2.3",
+      "@types/react-dom": "19.2.3"
+    },
+    "patchedDependencies": {
+      "@mikro-orm/sql@7.0.4": "patches/@mikro-orm__sql@7.0.4.patch"
+    }
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@8.15.6"
+}
