@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "name": "vscode-jest-tests.v2",
+      "request": "launch",
+      "cwd": "${fileDirname}",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "exec",
+        "jest"
+      ],
+      "args": [
+        "--no-cache",
+        "--runInBand",
+        "--watchAll=false",
+        "--testPathPattern",
+        "${fileBasename}"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true,
+      "protocol": "inspector",
+      "windows": {
+        "runtimeExecutable": "pnpm.cmd"
+      }
+    }
+  ]
+}
