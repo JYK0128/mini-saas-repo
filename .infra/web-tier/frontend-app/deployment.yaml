@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deploy
+  namespace: web-tier
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+        tier: web
+    spec:
+      containers:
+        - name: web-server
+          image: my-frontend-image:v1
+          ports:
+            - containerPort: 3000
+          env:
+            - name: API_URL
+              value: "http://auth-api-service.service-tier.svc.cluster.local:8080"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  namespace: web-tier
+spec:
+  selector:
+    app: frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: ClusterIP

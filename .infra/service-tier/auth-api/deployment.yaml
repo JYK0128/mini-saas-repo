@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-api-deploy
+  namespace: service-tier
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: auth-api
+  template:
+    metadata:
+      labels:
+        app: auth-api
+        tier: service
+    spec:
+      containers:
+        - name: api-server
+          image: my-backend-image:v1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DATABASE_URL
+              value: "postgres://myuser:mypassword@postgres-service.data-tier.svc.cluster.local:5432/mydb"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-api-service
+  namespace: service-tier
+spec:
+  selector:
+    app: auth-api
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP

@@ -1,0 +1,66 @@
+# PostgreSQL 데이터 저장을 위한 PersistentVolumeClaim (디스크 할당 요청)
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+  namespace: data-tier
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi # 5GB의 용량 요청 (개인 서버용)
+
+---
+# PostgreSQL 데이터베이스 파드 배포 (Deployment)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-db
+  namespace: data-tier
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+        tier: data
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:15-alpine # 가벼운 알파인 리눅스 기반의 Postgres 15버전 사용
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              value: "mydb"          # 기본 생성될 데이터베이스 이름
+            - name: POSTGRES_USER
+              value: "myuser"        # 기본 생성될 유저 이름
+            - name: POSTGRES_PASSWORD
+              value: "mypassword"    # 기본 유저의 비밀번호 (실무 환경에서는 Secret 객체 사용 권장)
+          volumeMounts:
+            - name: postgres-storage
+              mountPath: /var/lib/postgresql/data # 컨테이너 내부의 데이터 저장 경로
+      volumes:
+        - name: postgres-storage
+          persistentVolumeClaim:
+            claimName: postgres-pvc # 위에서 만든 PVC를 연결하여 데이터를 영구 보존
+
+---
+# PostgreSQL 서비스 노출 (클러스터 내부 통신용)
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-service
+  namespace: data-tier
+spec:
+  selector:
+    app: postgres
+  ports:
+    - protocol: TCP
+      port: 5432       # 서비스가 노출할 포트
+      targetPort: 5432 # 파드의 타겟 포트
+  type: ClusterIP      # 클러스터 내부에서만 접근 가능하도록 설정

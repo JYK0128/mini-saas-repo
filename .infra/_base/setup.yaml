@@ -1,0 +1,81 @@
+﻿
+# 1. Namespaces 생성
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: app-tier
+  labels:
+    tier: app
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: service-tier
+  labels:
+    tier: service
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: data-tier
+  labels:
+    tier: data
+
+# 2. Network Policies (네트워크 보안 설정)
+---
+# app-Tier 통제 정책
+# 외부 사용자 및 Ingress 컨트롤러의 접근을 허용합니다.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-external-to-app
+  namespace: app-tier
+spec:
+  podSelector: {} # app-tier의 모든 파드에 적용
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - ipBlock:
+            cidr: 0.0.0.0/0 # 인터넷 등 외부의 모든 IP에서 접근 허용 (필요시 Ingress 서브넷으로 제한 가능)
+
+---
+# Service-Tier 통제 정책
+# 오직 app-tier에 있는 파드들만 service-tier에 접근할 수 있도록 허용합니다. (외부나 data-tier에서 접근 불가)
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-app-to-service
+  namespace: service-tier
+spec:
+  podSelector: {} # service-tier의 모든 파드에 적용
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              tier: app # "tier: app" 라벨이 있는 네임스페이스(app-tier)에서 오는 트래픽만 허용
+
+---
+# Data-Tier 통제 정책
+# 오직 service-tier에 있는 파드들만 data-tier (DB)에 접근할 수 있도록 허용합니다.
+# app-tier나 외부에서는 절대 직접 DB에 접근할 수 없습니다.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-service-to-data
+  namespace: data-tier
+spec:
+  podSelector: {} # data-tier의 모든 파드(DB)에 적용
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              tier: service # "tier: service" 라벨이 있는 네임스페이스(service-tier)에서 오는 트래픽만 허용
+
