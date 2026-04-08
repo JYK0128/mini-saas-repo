@@ -1,19 +1,22 @@
 import { PickType } from '@nestjs/swagger';
-import { IsEmail, IsString, Length } from 'class-validator';
+import { IsEmail, IsJWT } from 'class-validator';
 
 import { User } from '@/entities';
 
+export class EmailConflictDto
+  extends PickType(User, ['email']) {
+  @IsEmail()
+  override email!: string;
+}
+
 export class RequestEmailVerificationDto
-  extends PickType(User, ['email'] as const) {
+  extends PickType(User, ['email']) {
   @IsEmail()
   override email!: string;
 }
 
 export class ConfirmEmailVerificationDto {
-  @IsString()
-  id!: string;
-
-  @Length(6, 6)
+  @IsJWT()
   token!: string;
 }
 

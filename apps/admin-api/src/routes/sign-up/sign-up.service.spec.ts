@@ -139,7 +139,7 @@ describe('SignUp Service', () => {
     it('should check if email exists', async () => {
       await withRequestContext(async (forkedEm) => {
         const email = `signup-${Date.now()}@test.com`;
-        const exists = await service.checkEmailDuplicate({ email });
+        const exists = await service.checkEmailConflict({ email });
         expect(exists).toBe(false);
 
         const user = forkedEm.create(User, { name: 'E', email, emailVerified: true });
@@ -147,7 +147,7 @@ describe('SignUp Service', () => {
         await forkedEm.flush();
 
         try {
-          await service.checkEmailDuplicate({ email });
+          await service.checkEmailConflict({ email });
           fail('should throw');
         }
         catch (error) {

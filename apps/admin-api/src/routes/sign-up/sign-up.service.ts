@@ -4,12 +4,12 @@ import * as bcrypt from 'bcrypt';
 import { verify } from 'otplib';
 
 import { ErrorException } from '@/common/exceptions/error.exception';
-import { verifyInvitationToken } from '@/common/tools/JWT';
+import { signEmailToken, verifyEmailToken, verifyInvitationToken } from '@/common/tools/JWT';
 import { mailer } from '@/common/tools/Mailer';
 import { generateOtp } from '@/common/tools/OTP';
 import { AccountRepository, InvitationRepository, InvitationStatus, MemberRepository, Organization, ProviderType, TermAgreementRepository, TermRepository, TermType, UserRepository, VerificationRepository } from '@/entities';
 
-import { ConfirmEmailVerificationDto, type ConfirmPhoneVerificationDto, type CreateAccountDto, type RequestEmailVerificationDto, type RequestPhoneVerificationDto, ResendEmailVerificationDto } from './dto';
+import { ConfirmEmailVerificationDto, ConfirmPhoneVerificationDto, CreateAccountDto, EmailConflictDto, RequestEmailVerificationDto, RequestPhoneVerificationDto, ResendEmailVerificationDto } from './dto';
 
 @Injectable()
 export class SignUpService {
@@ -26,9 +26,9 @@ export class SignUpService {
   /**
    * 유저 이메일(아이디) 중복 확인
    */
-  async checkEmailDuplicate({
+  async checkEmailConflict({
     email,
-  }: RequestEmailVerificationDto) {
+  }: EmailConflictDto) {
     const exists = await this.userRepo.exist({ email });
     if (exists) {
       throw new ErrorException('USER_ALREADY_EXISTS', 409);
@@ -43,14 +43,13 @@ export class SignUpService {
     phoneNumber,
   }: RequestPhoneVerificationDto) {
     const { secret, token } = await generateOtp();
-    const verification = this.verificationRepo.createVerification(
+    this.verificationRepo.createVerification(
       phoneNumber,
       secret,
-      60 * 3 * 1000,
+      3 * 60 * 1000,
     );
 
     try {
-      this.verificationRepo.persist(verification);
       await this.verificationRepo.flush();
     }
     catch (error) {
@@ -60,47 +59,12 @@ export class SignUpService {
       throw error;
     }
 
-    return token;
-  }
-
-  /**
-   * 유저 휴대폰코드 전송
-   */
-  async sendPhoneVerificationCode({
-    phoneNumber,
-    token,
-  }: ConfirmPhoneVerificationDto) {
+    // TODO: SMS로 변경
     await mailer.sendMail({
       to: process.env.EMAIL || phoneNumber,
       subject: '휴대폰 인증',
       text: `인증번호: ${token}`,
     });
-  }
-
-  /**
-   * 유저 휴대폰인증 확인
-   */
-  async confirmPhoneVerification({
-    phoneNumber,
-    token,
-  }: ConfirmPhoneVerificationDto) {
-    const verification = await this.verificationRepo.findActiveVerification(phoneNumber);
-    if (!verification?.value) {
-      throw new ErrorException('VERIFICATION_NOT_FOUND', HttpStatus.BAD_REQUEST);
-    }
-
-    const { valid } = await verify({
-      secret: verification.value,
-      token,
-      epochTolerance: 60 * 3,
-    });
-    if (!valid) {
-      throw new ErrorException('INVALID_VERIFICATION_TOKEN', HttpStatus.BAD_REQUEST);
-    }
-
-    verification.verifiedAt = new Date();
-
-    return verification.id;
   }
 
   /**
@@ -113,11 +77,10 @@ export class SignUpService {
     const verification = this.verificationRepo.createVerification(
       email,
       secret,
-      60 * 30 * 1000,
+      30 * 60 * 1000,
     );
 
     try {
-      this.verificationRepo.persist(verification);
       await this.verificationRepo.flush();
     }
     catch (error) {
@@ -127,21 +90,12 @@ export class SignUpService {
       throw error;
     }
 
-    return { id: verification.id, token };
-  }
+    const verificationUrl = new URL('/sign-up/email-confirm', process.env.WEB_URL);
 
-  /**
-   * 유저 이메일코드 전송
-   */
-  async sendEmailVerificationCode({
-    id,
-    token,
-  }: ConfirmEmailVerificationDto, email: string) {
-    const url = new URL('/sign-up/email-confirm', process.env.WEB_URL);
-    url.searchParams.set('token', token.toString().padStart(6, '0'));
-    url.searchParams.set('id', id);
+    // verification id 정보를 감싼 jwt 토큰
+    const signedToken = await signEmailToken({ email, token });
+    verificationUrl.searchParams.set('token', signedToken);
 
-    const verificationUrl = url.toString();
     await mailer.sendMail({
       to: process.env.EMAIL || email,
       subject: '이메일 인증',
@@ -161,18 +115,13 @@ export class SignUpService {
   }
 
   /**
-   * 유저 이메일인증 확인
+   * 유저 휴대폰인증 확인
    */
-  async confirmEmailVerification(
-    {
-      id,
-      token,
-    }: ConfirmEmailVerificationDto,
-  ) {
-    const verification = await this.verificationRepo.findOne({
-      id,
-      expiresAt: { $gt: new Date() },
-    });
+  async confirmPhoneVerification({
+    phoneNumber,
+    token,
+  }: ConfirmPhoneVerificationDto) {
+    const verification = await this.verificationRepo.findActiveVerification(phoneNumber);
     if (!verification?.value) {
       throw new ErrorException('VERIFICATION_NOT_FOUND', HttpStatus.BAD_REQUEST);
     }
@@ -180,7 +129,41 @@ export class SignUpService {
     const { valid } = await verify({
       secret: verification.value,
       token,
-      epochTolerance: 180,
+      epochTolerance: [3 * 60, 0],
+    });
+    if (!valid) {
+      throw new ErrorException('INVALID_VERIFICATION_TOKEN', HttpStatus.BAD_REQUEST);
+    }
+
+    verification.verifiedAt = new Date();
+    return verification.id;
+  }
+
+  /**
+   * 유저 이메일인증 확인
+   */
+  async confirmEmailVerification(
+    {
+      token,
+    }: ConfirmEmailVerificationDto,
+  ) {
+    const payload = await verifyEmailToken(token);
+    if (!payload) {
+      throw new ErrorException('INVALID_VERIFICATION_TOKEN', HttpStatus.BAD_REQUEST);
+    }
+
+    console.log({ payload });
+    const verification = await this.verificationRepo.findLast({
+      identifier: payload.email,
+    });
+    if (!verification?.value) {
+      throw new ErrorException('VERIFICATION_NOT_FOUND', HttpStatus.BAD_REQUEST);
+    }
+
+    const { valid } = await verify({
+      secret: verification.value,
+      token: payload.token,
+      epochTolerance: [30 * 60, 0],
     });
     if (!valid) {
       throw new ErrorException('INVALID_VERIFICATION_TOKEN', HttpStatus.BAD_REQUEST);
@@ -200,7 +183,7 @@ export class SignUpService {
     let organization: Organization | undefined;
 
     if (email) {
-      const invitation = await this.invitationRepo.findOne({
+      const invitation = await this.invitationRepo.findLast({
         email,
         status: InvitationStatus.PENDING,
         expiresAt: { $gt: new Date() },
@@ -251,10 +234,9 @@ export class SignUpService {
     }
 
     // 휴대폰 인증 확인
-    const verification = await this.verificationRepo.findOne({
+    const verification = await this.verificationRepo.findLast({
       id: token,
       identifier: phoneNumber,
-      verifiedAt: { $ne: null },
     });
     if (!verification) {
       throw new ErrorException('INVALID_VERIFICATION_TOKEN', HttpStatus.BAD_REQUEST);
@@ -274,7 +256,7 @@ export class SignUpService {
 
     // 초대완료 처리, 멤버십 적용
     for (const invitation of pendingInvitations) {
-      const existingMember = await this.memberRepo.findOne({
+      const existingMember = await this.memberRepo.findLast({
         user: user.id,
         organization: invitation.organization.id,
       });
@@ -316,7 +298,7 @@ export class SignUpService {
   async resendEmailVerification({
     email,
   }: ResendEmailVerificationDto) {
-    const user = await this.userRepo.findOne({ email });
+    const user = await this.userRepo.findLast({ email });
     if (!user) {
       throw new ErrorException('USER_NOT_FOUND', HttpStatus.NOT_FOUND);
     }
@@ -324,8 +306,7 @@ export class SignUpService {
       throw new ErrorException('EMAIL_ALREADY_VERIFIED', HttpStatus.BAD_REQUEST);
     }
 
-    const { id, token } = await this.requestEmailVerification({ email });
-    await this.sendEmailVerificationCode({ id, token }, email);
+    await this.requestEmailVerification({ email });
   }
 
   /**
@@ -338,7 +319,7 @@ export class SignUpService {
       throw new ErrorException('INVALID_OR_EXPIRED_INVITATION', HttpStatus.BAD_REQUEST);
     }
 
-    const invitation = await this.invitationRepo.findOne(
+    const invitation = await this.invitationRepo.findLast(
       {
         id: payload.invitationId,
         status: InvitationStatus.PENDING,
@@ -369,12 +350,12 @@ export class SignUpService {
   async acceptInvite(token: string, userId: string) {
     const invitation = await this.getInvitation(token);
 
-    const user = await this.userRepo.findOne(userId);
+    const user = await this.userRepo.findLast(userId);
     if (!user || user.email !== invitation.email) {
       throw new ErrorException('INVALID_USER_FOR_INVITATION', HttpStatus.FORBIDDEN);
     }
 
-    const existingMember = await this.memberRepo.findOne({
+    const existingMember = await this.memberRepo.findLast({
       user: user.id,
       organization: invitation.organization.id,
     });

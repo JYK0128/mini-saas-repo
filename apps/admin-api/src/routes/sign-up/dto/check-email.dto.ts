@@ -3,7 +3,7 @@ import { IsEmail } from 'class-validator';
 
 import { User } from '@/entities';
 
-export class CheckEmailDto
+export class CheckEmailConflictDto
   extends PickType(User, ['email'] as const) {
   @IsEmail()
   override email!: string;

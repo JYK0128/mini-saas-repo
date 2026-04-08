@@ -1,15 +1,15 @@
-import { Body, Controller, Get, HttpStatus, Post, Query, Req, Res, Session } from '@nestjs/common';
+import { Body, Controller, Get, HttpStatus, Post, Query, Res, Session } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import type { Request, Response } from 'express';
+import type { Response } from 'express';
 import { type SessionData } from 'express-session';
 
-import { ApiGenericArrayResponse, ApiGenericResponse, Public } from '@/common/decorators';
+import { ApiGenericArrayResponse, ApiGenericResponse, Cookie, Public } from '@/common/decorators';
 import { ApiResponse } from '@/common/dto/response.dto';
 import { ErrorException } from '@/common/exceptions/error.exception';
 import { Invitation } from '@/entities';
 
 import { StaffResponseDto } from '../business/staff/dto/staff.dto';
-import { CheckEmailDto, ConfirmEmailVerificationDto, ConfirmPhoneVerificationDto, CreateAccountDto, GetTermsDto, GetTermsResponseDto, RequestPhoneVerificationDto, ResendEmailVerificationDto } from './dto';
+import { CheckEmailConflictDto, ConfirmEmailVerificationDto, ConfirmPhoneVerificationDto, CreateAccountDto, GetTermsDto, GetTermsResponseDto, RequestPhoneVerificationDto, ResendEmailVerificationDto } from './dto';
 import { SignUpService } from './sign-up.service';
 
 @ApiTags('Sign-Up')
@@ -39,10 +39,10 @@ export class SignUpController {
   @ApiOperation({ summary: '1-2. 회원정보입력 - 이메일 중복 확인' })
   @ApiGenericResponse(true)
   @Post('email/check')
-  async checkEmail(
-    @Body() dto: CheckEmailDto,
+  async checkEmailConflict(
+    @Body() dto: CheckEmailConflictDto,
   ) {
-    await this.signUpService.checkEmailDuplicate(dto);
+    await this.signUpService.checkEmailConflict(dto);
     return ApiResponse.ok(true);
   }
 
@@ -52,8 +52,7 @@ export class SignUpController {
   async requestPhoneVerification(
     @Body() dto: RequestPhoneVerificationDto,
   ) {
-    const token = await this.signUpService.requestPhoneVerification(dto);
-    await this.signUpService.sendPhoneVerificationCode({ ...dto, token });
+    await this.signUpService.requestPhoneVerification(dto);
     return ApiResponse.ok(true);
   }
 
@@ -66,6 +65,7 @@ export class SignUpController {
   ) {
     const token = await this.signUpService.confirmPhoneVerification(dto);
 
+    // 인증완료 증빙토큰
     res.cookie('pbt', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
@@ -80,17 +80,15 @@ export class SignUpController {
   @Post('account/create')
   async createAccount(
     @Body() dto: CreateAccountDto,
-    @Req() req: Request,
+    @Cookie('pbt') pbt?: string,
   ) {
-    const pbt = (req.cookies as Record<string, string | undefined>).pbt;
     if (!pbt) {
       throw new ErrorException('VERIFICATION_TOKEN_NOT_FOUND', HttpStatus.BAD_REQUEST);
     }
 
     const user = await this.signUpService.createAccount(pbt, dto);
     if (!user.emailVerified) {
-      const { id, token } = await this.signUpService.requestEmailVerification({ email: dto.email });
-      await this.signUpService.sendEmailVerificationCode({ id, token }, dto.email);
+      await this.signUpService.requestEmailVerification({ email: dto.email });
     }
     return ApiResponse.ok(true);
   }
