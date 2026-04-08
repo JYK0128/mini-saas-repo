@@ -38,14 +38,10 @@
 
 ## 🎨 UI/UX Enhancement
 
-- [ ] **Shared Components (`@repo/ui`)**
-  - [ ] Storybook에 등록된 컴포넌트들의 실제 인터랙션 보정 (`autodocs` 태그 확인)
-  - [ ] 데이터 테이블의 필터링 및 정렬 기능 고도화
-
 ## ⚙️ Build System & Infra (Turborepo & Dev Process)
 
 - [ ] **Turborepo & Orval 빌드 프로세스 최적화**
-  - [ ] Orval의 API 서버 의존성 제거: Swagger JSON 정적 추출 스크립트 도입 및 파일 기반 입력으로 전환
+  - [ ] Orval의 API 서버 의존성 처리
   - [ ] `turbo.json` 태스크 그래프 정교화: `set-up` -> `pre-build` -> `build` -> `dev` 흐름의 결정론적 순서 보장
 - [ ] **CI/CD 파이프라인 연동**
   - [ ] GitHub Actions를 이용한 자동 빌드 및 테스트 환경 구축
