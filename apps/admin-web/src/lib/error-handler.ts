@@ -13,11 +13,19 @@ export const isApiError = (error: unknown): error is AxiosError<BaseResponse> =>
 };
 
 /**
- * Type guard to check if a response is a successful AxiosResponse with BaseResponse data
+ * Type guard to check if a response is a successful BaseResponse
+ * Handles both full AxiosResponse and peeled data wrapper.
  */
-export const isApiSuccess = (response: unknown): response is AxiosResponse<BaseResponse> => {
-  const res = response as AxiosResponse<BaseResponse>;
-  return res.data?.success;
+export const isApiSuccess = (data: unknown): data is (BaseResponse | AxiosResponse<BaseResponse>) => {
+  if (!data) return false;
+
+  // If it's a full AxiosResponse
+  if (typeof data === 'object' && data !== null && 'config' in data && 'data' in data) {
+    return (data as AxiosResponse<BaseResponse>).data?.success === true;
+  }
+
+  // If it's already peeled data
+  return (data as BaseResponse).success === true;
 };
 
 /**
@@ -69,8 +77,14 @@ export const getApiErrorMessage = (error: unknown) => {
 };
 
 export const toastApiSuccess = (data: unknown) => {
-  if (isApiSuccess(data) && data.data.message) {
-    toast.success(data.data.message, { id: 1 });
+  if (!isApiSuccess(data)) return;
+
+  const message = ('data' in data && typeof data.data === 'object' && data.data !== null && 'message' in data.data) 
+    ? (data.data as BaseResponse).message 
+    : (data as BaseResponse).message;
+
+  if (message) {
+    toast.success(message, { id: 1 });
   }
   else {
     toast.success('성공적으로 처리되었습니다.', { id: 1 });

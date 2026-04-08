@@ -40,9 +40,9 @@ export class Invitation
   @ApiProperty({ enum: RoleType })
   role!: RoleType;
 
-  @Enum({ items: () => InvitationStatus, default: InvitationStatus.PENDING })
+  @Enum(() => InvitationStatus)
   @ApiProperty({ enum: InvitationStatus })
-  status!: InvitationStatus;
+  status: InvitationStatus = InvitationStatus.PENDING;
 
   @Property({ type: 'datetime' })
   expiresAt!: Date;

@@ -1,7 +1,10 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
+const url = import.meta.env.VITE_API_URL as string 
+|| 'http://localhost:3000';
+
 export const AXIOS_INSTANCE = axios.create({
-  baseURL: (import.meta.env.VITE_API_URL as string) || 'http://localhost:3000',
+  baseURL: `${url}/api`,
   withCredentials: true,
 });
 
@@ -10,9 +13,8 @@ export const axiosInstance = <T>(config: AxiosRequestConfig): Promise<T> => {
   const promise = AXIOS_INSTANCE({
     ...config,
     cancelToken: source.token,
-  }).then(({ data }: AxiosResponse<T>) => data); // Peel off ONLY the axios.data wrapper
+  }).then(({ data }: AxiosResponse<T>) => data);
 
-  // @ts-expect-error cancel is not in promise type
   promise.cancel = () => {
     source.cancel('Query was cancelled');
   };
