@@ -116,7 +116,7 @@ export interface PlatformInvitation {
   name: string;
   organizationId: string;
   role: string;
-  status: string;
+  status: Generated<string>;
   updatedAt: Timestamp;
   updatedBy: string | null;
 }

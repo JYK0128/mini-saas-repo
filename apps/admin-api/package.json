@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "type": "module",
   "private": true,
+  "mikro-orm": {
+    "useTsNode": true,
+    "tsConfigPath": "./tsconfig.app.json"
+  },
   "scripts": {
     "build": "node esbuild.config.js",
     "dev": "cross-env DOTENV_ENV=development dotenvx run --convention=nextjs -- nodemon --watch src -e ts --exec \"node esbuild.config.js && node --inspect dist/main.js\"",
