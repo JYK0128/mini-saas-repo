@@ -1,10 +1,10 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
-const url = import.meta.env.VITE_API_URL as string 
-|| 'http://localhost:3000';
+const url = import.meta.env.VITE_API_URL as string
+  || 'http://localhost:3000';
 
 export const AXIOS_INSTANCE = axios.create({
-  baseURL: `${url}/api`,
+  baseURL: `${url}`,
   withCredentials: true,
 });
 
