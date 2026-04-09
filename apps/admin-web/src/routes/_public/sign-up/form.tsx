@@ -8,7 +8,7 @@ import { CheckCircle } from 'lucide-react';
 import { Fragment, useEffect, useState } from 'react';
 import { z } from 'zod';
 
-import { useSignUpControllerCheckEmail,
+import { useSignUpControllerCheckEmailConflict,
          useSignUpControllerConfirmPhoneVerification,
          useSignUpControllerCreateAccount,
          useSignUpControllerGetInvitation,
@@ -43,9 +43,9 @@ function RouteComponent() {
   const [phoneVerified, setPhoneVerified] = useState(false);
 
   const { mutateAsync: signUp } = useSignUpControllerCreateAccount();
-  const { mutateAsync: checkEmail } = useSignUpControllerCheckEmail();
+  const { mutateAsync: checkEmail } = useSignUpControllerCheckEmailConflict();
   const { mutateAsync: requestPhone } = useSignUpControllerRequestPhoneVerification();
-  const { mutateAsync: verifyPhone } = useSignUpControllerConfirmPhoneVerification();
+  const { mutateAsync: confirmPhone } = useSignUpControllerConfirmPhoneVerification();
   const { data: invitation } = useSignUpControllerGetInvitation({ token: token as string }, {
     query: { enabled: !!token },
   });
@@ -117,7 +117,7 @@ function RouteComponent() {
   const handleVerifyPhone = async () => {
     const phoneNumber = toGlobalPhoneNumber(form.getFieldValue('phoneNumber'));
     const token = form.getFieldValue('verificationCode');
-    await verifyPhone({ data: { phoneNumber, token } });
+    await confirmPhone({ data: { phoneNumber, token } });
     setPhoneVerified(true);
     setTimer(0);
   };

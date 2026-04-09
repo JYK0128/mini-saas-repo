@@ -164,7 +164,6 @@ describe('SignIn Service', () => {
         (verify as jest.Mock).mockResolvedValue({ valid: true });
 
         await service.resetPassword({
-          identifier: user.email,
           token: 'some-token',
           password: 'new-password-123',
           confirmPassword: 'new-password-123',

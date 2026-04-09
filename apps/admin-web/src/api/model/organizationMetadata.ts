@@ -15,4 +15,5 @@ export interface OrganizationMetadata {
   activationExpiresAt?: string;
   customDomain?: string;
   logoUrl?: string;
+  displayName?: string;
 }

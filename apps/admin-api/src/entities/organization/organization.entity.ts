@@ -55,6 +55,9 @@ export class OrganizationMetadata {
 
   @Property({ type: 'string', nullable: true })
   logoUrl?: string;
+
+  @Property({ type: 'string', nullable: true })
+  displayName?: string;
 }
 
 @Entity({
@@ -80,6 +83,7 @@ export class Organization
   @Property({ type: 'string', unique: true })
   slug: string = serial();
 
+  /** @deprecated */
   @Property({ type: 'string', nullable: true })
   logo?: string;
 

@@ -6,8 +6,8 @@
  * OpenAPI spec version: 1.0
  */
 import type { BaseResponse } from './baseResponse';
-import type { ServiceSettingsResponseDto } from './serviceSettingsResponseDto';
+import type { LogoUploadResponseDto } from './logoUploadResponseDto';
 
-export type ServiceSettingsControllerUpdate200 = BaseResponse & {
-  data: ServiceSettingsResponseDto;
+export type ServiceSettingsControllerUploadLogoImage200 = BaseResponse & {
+  data: LogoUploadResponseDto;
 };

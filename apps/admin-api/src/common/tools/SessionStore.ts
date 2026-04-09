@@ -75,8 +75,8 @@ export class SessionStore extends Store {
       return {
         user: session.user,
         permissions,
-        twoFactorPending: session.metadata?.twoFactorPending as boolean ?? (!!session.user.twoFactorEnabled),
-        needsTermAgreement: session.metadata?.needsTermAgreement as boolean ?? needsTermAgreement,
+        twoFactorPending: !!session.user.twoFactorEnabled,
+        needsTermAgreement: needsTermAgreement,
         cookie: session.metadata?.cookie as SessionData['cookie'],
       };
     })

@@ -50,17 +50,9 @@ describe('Service SettingsService (DB)', () => {
       });
     });
 
-    it('findOne should return settings', async () => {
-      await withRequestContext(async () => {
-        const result = await service.findOne(organization.id);
-        expect(result).toHaveProperty('displayName');
-        expect(result.updatedAt).toBeDefined();
-      });
-    });
-
     it('update should update settings', async () => {
       await withRequestContext(async () => {
-        const result = await service.update(organization.id, {
+        const result = await service.updateOrganization(organization, {
           displayName: 'Updated Name',
         });
         expect(result.displayName).toBe('Updated Name');

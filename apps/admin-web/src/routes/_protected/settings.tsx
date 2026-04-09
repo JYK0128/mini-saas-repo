@@ -4,14 +4,12 @@ import { useForm } from '@tanstack/react-form';
 import { useQueryClient } from '@tanstack/react-query';
 import { createFileRoute } from '@tanstack/react-router';
 import { Camera, Loader2, Trash2 } from 'lucide-react';
-import { type ChangeEvent, useMemo, useRef, useState } from 'react';
+import { type ChangeEvent, useEffect, useMemo, useRef, useState } from 'react';
 import { toast } from 'sonner';
 import type z from 'zod';
 
-import { getServiceSettingsControllerFindOneQueryKey,
-         useServiceSettingsControllerFindOne,
-         useServiceSettingsControllerUpdate,
-         useServiceSettingsControllerUploadLogo,
+import { useServiceSettingsControllerUpdateOrganization,
+         useServiceSettingsControllerUploadLogoImage,
          useServiceTermsControllerCreate,
          useServiceTermsControllerFindAll,
          useServiceTermsControllerUpdate } from '@/api/endpoints';
@@ -63,33 +61,39 @@ function ServiceGeneralSettingsCard({
 }) {
   const queryClient = useQueryClient();
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const { mutateAsync: updateSettings } = useServiceSettingsControllerUpdate();
-  const { mutateAsync: uploadLogo, isPending: isLogoUploading } = useServiceSettingsControllerUploadLogo();
+  const { mutateAsync: updateSettings } = useServiceSettingsControllerUpdateOrganization();
+  const { mutateAsync: uploadLogo, isPending: isLogoUploading } = useServiceSettingsControllerUploadLogoImage();
 
   const form = useAppForm({
     defaultValues: {
-      displayName: settings?.displayName,
+      displayName: settings?.displayName ?? '',
     } as z.infer<typeof ServiceSettingsControllerUpdateBody>,
     validators: {
       onSubmit: ServiceSettingsControllerUpdateBody,
     },
     onSubmit: async ({ value }) => {
       await updateSettings({ data: value });
-      toast.success('설정이 저장되었습니다.');
       await onRefetch();
     },
   });
+
+  // Re-initialize form when settings data arrives
+  const [hasInitialized, setHasInitialized] = useState(false);
+  useEffect(() => {
+    if (settings && !hasInitialized) {
+      form.reset({
+        displayName: settings.displayName ?? '',
+      });
+      setHasInitialized(true);
+    }
+  }, [settings, hasInitialized, form]);
 
   const handleLogoUpload = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
 
     try {
-      const response = await uploadLogo({ data: { file } });
-      const logoUrl = response.data.logoUrl;
-      await updateSettings({ data: { logoUrl } });
-      await queryClient.invalidateQueries({ queryKey: getServiceSettingsControllerFindOneQueryKey() });
-      toast.success('로고가 업데이트되었습니다.');
+      await uploadLogo({ data: { file } });
     }
     catch {
       toast.error('로고 업로드에 실패했습니다.');
@@ -102,12 +106,7 @@ function ServiceGeneralSettingsCard({
   const handleLogoDelete = async () => {
     if (!window.confirm('로고를 삭제하시겠습니까?')) return;
     await updateSettings({ data: { logoUrl: undefined } });
-    await queryClient.invalidateQueries({ queryKey: getServiceSettingsControllerFindOneQueryKey() });
-    toast.success('로고가 삭제되었습니다.');
   };
-
-  const displayName = settings?.displayName || 'Service Name';
-  const initials = displayName.slice(0, 2).toUpperCase();
 
   return (
     <Card className="shadow-smooth border-slate-200/60 overflow-hidden">
@@ -120,12 +119,20 @@ function ServiceGeneralSettingsCard({
           {/* Logo Section */}
           <div className="flex flex-col items-center gap-4 shrink-0">
             <div className="relative group">
-              <Avatar className="w-32 h-32 rounded-3xl border-2 border-slate-100 shadow-sm ring-8 ring-slate-50 transition-all group-hover:ring-indigo-50/50">
-                <AvatarImage src={settings?.logoUrl} className="object-contain p-2" />
-                <AvatarFallback className="bg-slate-50 text-slate-300 text-4xl font-bold">
-                  {initials}
-                </AvatarFallback>
-              </Avatar>
+              <form.Subscribe selector={(s) => [s.values.displayName]}>
+                {([displayNameValue]) => {
+                  const displayNamePreview = displayNameValue || settings?.displayName || 'Service Name';
+                  const initials = displayNamePreview.slice(0, 2).toUpperCase();
+                  return (
+                    <Avatar className="w-32 h-32 rounded-3xl border-2 border-slate-100 shadow-sm ring-8 ring-slate-50 transition-all group-hover:ring-indigo-50/50">
+                      <AvatarImage src={settings?.logoUrl} className="object-contain p-2" />
+                      <AvatarFallback className="bg-slate-50 text-slate-300 text-4xl font-bold">
+                        {initials}
+                      </AvatarFallback>
+                    </Avatar>
+                  );
+                }}
+              </form.Subscribe>
               {canManage && (
                 <div className="absolute -bottom-2 -right-2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
                   <button
@@ -171,7 +178,7 @@ function ServiceGeneralSettingsCard({
             <form.AppForm>
               <form.Layout onSubmit={() => void form.handleSubmit()} className="flex flex-col gap-6">
                 <form.AppField name="displayName">
-                  {({ Input }) => (
+                  {({ Input, state }) => (
                     <div className="flex flex-col gap-3">
                       <Label className="text-xs font-bold text-slate-400 uppercase tracking-wider ml-1">서비스 표시명</Label>
                       <div className="flex gap-3">
@@ -194,6 +201,11 @@ function ServiceGeneralSettingsCard({
                           )}
                         />
                       </div>
+                      {state.meta.errors.length > 0 && (
+                        <p className="text-[11px] text-red-500 ml-1">
+                          {state.meta.errors.join(', ')}
+                        </p>
+                      )}
                       <p className="text-[11px] text-slate-400 ml-1">서비스의 공식 명칭을 설정하세요. 사용자들에게 이 이름으로 표시됩니다.</p>
                     </div>
                   )}

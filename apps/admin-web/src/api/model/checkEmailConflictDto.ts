@@ -5,8 +5,7 @@
  * The Admin API description
  * OpenAPI spec version: 1.0
  */
-import type { BaseResponse } from './baseResponse';
 
-export type SignUpControllerCheckEmail200 = BaseResponse & {
-  data: boolean;
-};
+export interface CheckEmailConflictDto {
+  email: string;
+}

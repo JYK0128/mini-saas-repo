@@ -7,8 +7,7 @@ import { signUpControllerConfirmEmailVerification } from '@/api/endpoints';
 
 export const Route = createFileRoute('/_public/sign-up/email-confirm')({
   validateSearch: z.object({
-    id: z.string(),
-    token: z.coerce.number(),
+    token: z.string(),
   }),
   /**
    * 화면 진입 시 서버에 이메일 인증 요청 수행
@@ -19,8 +18,7 @@ export const Route = createFileRoute('/_public/sign-up/email-confirm')({
       .then(() => ({ status: 'success' as const }))
       .catch(() => ({ status: 'error' as const }));
   },
-  errorComponent: ({ error }) => {
-    console.log(error);
+  errorComponent: () => {
     return <Navigate to="/login" replace />;
   },
   component: RouteComponent,

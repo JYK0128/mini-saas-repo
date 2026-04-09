@@ -21,7 +21,7 @@ export class Audit
   @ApiProperty({ description: '조직 ID', nullable: true })
   organizationId?: string;
 
-  @Property({ type: 'string' })
+  @Property({ type: 'text' })
   @ApiProperty({ description: '요청 URL' })
   url!: string;
 
@@ -41,11 +41,11 @@ export class Audit
   @ApiProperty({ description: 'IP 주소', nullable: true })
   ip?: string;
 
-  @Property({ type: 'string', nullable: true })
+  @Property({ type: 'text', nullable: true })
   @ApiProperty({ description: 'User-Agent', nullable: true })
   userAgent?: string;
 
-  @Property({ type: 'string', nullable: true })
+  @Property({ type: 'text', nullable: true })
   @ApiProperty({ description: '요청한 페이지 (Referer)', nullable: true })
   referer?: string;
 

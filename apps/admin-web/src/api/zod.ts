@@ -27,8 +27,8 @@ export const AuditControllerFindAllQueryParams = zod.object({
   "limit": zod.number().default(auditControllerFindAllQueryLimitDefault).describe('페이지당 항목 수')
 })
 
-export const auditControllerFindAllResponseTwoDataItemsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const auditControllerFindAllResponseTwoDataItemsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const auditControllerFindAllResponseTwoDataItemsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const auditControllerFindAllResponseTwoDataItemsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 
 export const AuditControllerFindAllResponse = zod.object({
   "success": zod.boolean().describe('성공 여부'),
@@ -534,39 +534,39 @@ export const TenantControllerUpdateResponse = zod.object({
 /**
  * @summary 본인 프로필 조회
  */
-export const profileControllerGetProfileResponseTwoDataSessionsItemActiveOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataSessionsItemActiveOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataSessionsItemActiveOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataSessionsItemActiveOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataSessionsItemActiveOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataSessionsItemActiveOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataSessionsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataSessionsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const profileControllerGetProfileResponseTwoDataSessionsItemActiveOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataSessionsItemActiveOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataSessionsItemActiveOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataSessionsItemActiveOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataSessionsItemActiveOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataSessionsItemActiveOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataSessionsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataSessionsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const profileControllerGetProfileResponseTwoDataAccountFailCountDefault = 0;
-export const profileControllerGetProfileResponseTwoDataAccountCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataAccountUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataMemberOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataMemberOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataMemberOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataMemberOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataMemberCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataMemberUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCategoryOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCategoryOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const profileControllerGetProfileResponseTwoDataAccountCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataAccountUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataMemberOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataMemberOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataMemberOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataMemberOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataMemberCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataMemberUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCategoryOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCategoryOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCategoryIsActiveDefault = true;
-export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataTermAgreementsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataTermAgreementsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetProfileResponseTwoDataUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataTermAgreementsItemTermUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataTermAgreementsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataTermAgreementsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetProfileResponseTwoDataUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 
 export const ProfileControllerGetProfileResponse = zod.object({
   "success": zod.boolean().describe('성공 여부'),
@@ -963,46 +963,46 @@ export const ProfileControllerDisable2FAResponse = zod.object({
 /**
  * @summary 약관 히스토리 조회
  */
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserSessionsItemActiveOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserSessionsItemActiveOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserSessionsItemActiveOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserSessionsItemActiveOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserSessionsItemActiveOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserSessionsItemActiveOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserSessionsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserSessionsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserSessionsItemActiveOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserSessionsItemActiveOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserSessionsItemActiveOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserSessionsItemActiveOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserSessionsItemActiveOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserSessionsItemActiveOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserSessionsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserSessionsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserAccountFailCountDefault = 0;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserAccountCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserAccountUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserMemberOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserMemberOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserMemberOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserMemberOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserMemberCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserMemberUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationMembersItemUserSessionsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationMembersItemUserSessionsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserAccountCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserAccountUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserMemberOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserMemberOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserMemberOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserMemberOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserMemberCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserMemberUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUserUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationMembersItemUserSessionsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationMembersItemUserSessionsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationMembersItemUserAccountFailCountDefault = 0;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationMembersItemUserCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationMembersItemUserUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationMembersItemUserCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationMembersItemUserUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryIsActiveDefault = true;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsHistoryResponseTwoDataItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCategoryUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemTermUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsHistoryResponseTwoDataItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 
 export const ProfileControllerGetAgreementsHistoryResponse = zod.object({
   "success": zod.boolean().describe('성공 여부'),
@@ -1336,54 +1336,54 @@ export const ProfileControllerGetAgreementsHistoryResponse = zod.object({
 /**
  * @summary 약관 현황 조회
  */
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserSessionsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserSessionsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserSessionsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserSessionsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserAccountFailCountDefault = 0;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemTermStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemTermCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryTermsItemStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryTermsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryTermsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemTermStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemTermCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUserUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryTermsItemStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryTermsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryTermsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const profileControllerGetAgreementsResponseTwoDataItemCategoryIsActiveDefault = true;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCategoryUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserSessionsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserSessionsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCategoryUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserSessionsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserSessionsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserAccountFailCountDefault = 0;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermCategoryIsActiveDefault = true;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const profileControllerGetAgreementsResponseTwoDataItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUserUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const profileControllerGetAgreementsResponseTwoDataItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const profileControllerGetAgreementsResponseTwoDataItemIsActiveDefault = true;
 
 export const ProfileControllerGetAgreementsResponse = zod.object({
@@ -1815,8 +1815,8 @@ export const ServiceAuditControllerFindAllQueryParams = zod.object({
   "url": zod.string().min(1).optional()
 })
 
-export const serviceAuditControllerFindAllResponseTwoDataItemsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceAuditControllerFindAllResponseTwoDataItemsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const serviceAuditControllerFindAllResponseTwoDataItemsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceAuditControllerFindAllResponseTwoDataItemsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 
 export const ServiceAuditControllerFindAllResponse = zod.object({
   "success": zod.boolean().describe('성공 여부'),
@@ -1991,7 +1991,7 @@ export const ServicePricingControllerFindAllResponse = zod.object({
 /**
  * @summary 서비스 설정 조회
  */
-export const ServiceSettingsControllerFindOneResponse = zod.object({
+export const ServiceSettingsControllerGetOrganizationResponse = zod.object({
   "success": zod.boolean().describe('성공 여부'),
   "code": zod.string().describe('응답 코드'),
   "message": zod.string().nullish().describe('응답 메시지'),
@@ -2013,12 +2013,12 @@ export const ServiceSettingsControllerFindOneResponse = zod.object({
 /**
  * @summary 서비스 설정 수정
  */
-export const ServiceSettingsControllerUpdateBody = zod.object({
+export const ServiceSettingsControllerUpdateOrganizationBody = zod.object({
   "displayName": zod.string().optional(),
   "logoUrl": zod.url().optional()
 })
 
-export const ServiceSettingsControllerUpdateResponse = zod.object({
+export const ServiceSettingsControllerUpdateOrganizationResponse = zod.object({
   "success": zod.boolean().describe('성공 여부'),
   "code": zod.string().describe('응답 코드'),
   "message": zod.string().nullish().describe('응답 메시지'),
@@ -2040,11 +2040,11 @@ export const ServiceSettingsControllerUpdateResponse = zod.object({
 /**
  * @summary 로고 이미지 업로드
  */
-export const ServiceSettingsControllerUploadLogoBody = zod.object({
+export const ServiceSettingsControllerUploadLogoImageBody = zod.object({
   "file": zod.instanceof(File)
 })
 
-export const ServiceSettingsControllerUploadLogoResponse = zod.object({
+export const ServiceSettingsControllerUploadLogoImageResponse = zod.object({
   "success": zod.boolean().describe('성공 여부'),
   "code": zod.string().describe('응답 코드'),
   "message": zod.string().nullish().describe('응답 메시지'),
@@ -2279,62 +2279,62 @@ export const ServiceStaffControllerGetInvitationQueryParams = zod.object({
   "token": zod.string()
 })
 
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterSessionsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterSessionsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterSessionsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterSessionsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const serviceStaffControllerGetInvitationResponseTwoDataInviterAccountFailCountDefault = 0;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterAccountCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterAccountUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterMemberOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterMemberOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterMemberOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterMemberOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterMemberCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterMemberUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterAccountCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterAccountUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterMemberOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterMemberOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterMemberOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterMemberOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterMemberCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterMemberUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryIsActiveDefault = true;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataInviterUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserSessionsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserSessionsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterTermAgreementsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataInviterUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserSessionsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserSessionsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserAccountFailCountDefault = 0;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermCategoryIsActiveDefault = true;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const serviceStaffControllerGetInvitationResponseTwoDataUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUserUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const serviceStaffControllerGetInvitationResponseTwoDataUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 
 export const ServiceStaffControllerGetInvitationResponse = zod.object({
   "success": zod.boolean().describe('성공 여부'),
@@ -2998,122 +2998,122 @@ export const SignInControllerSignInBody = zod.object({
 })
 
 export const signInControllerSignInResponseTwoDataSessionsItemUserAccountFailCountDefault = 0;
-export const signInControllerSignInResponseTwoDataSessionsItemUserAccountCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserAccountUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserMemberOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserMemberOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserMemberOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserMemberOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserMemberCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserMemberUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCategoryOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCategoryOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCategoryOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCategoryOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserAccountCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserAccountUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserMemberOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserMemberOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserMemberOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserMemberOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserMemberCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserMemberUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCategoryOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCategoryOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCategoryOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCategoryOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCategoryIsActiveDefault = true;
-export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUserUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserTermAgreementsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUserUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserAccountFailCountDefault = 0;
-export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserTermAgreementsItemTermCategoryIsActiveDefault = true;
-export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserTermAgreementsItemTermStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserTermAgreementsItemTermCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserTermAgreementsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserTermAgreementsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataSessionsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserSessionsItemActiveOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserSessionsItemActiveOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserSessionsItemActiveOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserSessionsItemActiveOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserSessionsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserSessionsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserTermAgreementsItemTermStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserTermAgreementsItemTermCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserTermAgreementsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserTermAgreementsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUserUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemActiveOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataSessionsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserSessionsItemActiveOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserSessionsItemActiveOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserSessionsItemActiveOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserSessionsItemActiveOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserSessionsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserSessionsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const signInControllerSignInResponseTwoDataMemberUserAccountFailCountDefault = 0;
-export const signInControllerSignInResponseTwoDataMemberUserAccountCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserAccountUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermCategoryOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermCategoryOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signInControllerSignInResponseTwoDataMemberUserAccountCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserAccountUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermCategoryOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermCategoryOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermCategoryIsActiveDefault = true;
-export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUserUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataMemberUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserSessionsItemActiveOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserSessionsItemActiveOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserSessionsItemActiveOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserSessionsItemActiveOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserSessionsItemActiveOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserSessionsItemActiveOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserSessionsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserSessionsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserTermAgreementsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUserUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataMemberUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserSessionsItemActiveOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserSessionsItemActiveOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserSessionsItemActiveOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserSessionsItemActiveOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserSessionsItemActiveOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserSessionsItemActiveOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserSessionsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserSessionsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const signInControllerSignInResponseTwoDataTermAgreementsItemUserAccountFailCountDefault = 0;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserAccountCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserAccountUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserMemberOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserMemberOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserMemberOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserMemberOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserMemberCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserMemberUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUserUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemUserSessionsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemUserSessionsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserAccountCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserAccountUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserMemberOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserMemberOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserMemberOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserMemberOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserMemberCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserMemberUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUserUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemUserSessionsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemUserSessionsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemUserAccountFailCountDefault = 0;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemUserCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemUserUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemUserCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemUserUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryIsActiveDefault = true;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemTermStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemTermUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataTermAgreementsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signInControllerSignInResponseTwoDataUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemTermStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemTermCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemTermUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataTermAgreementsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signInControllerSignInResponseTwoDataUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 
 export const SignInControllerSignInResponse = zod.object({
   "success": zod.boolean().describe('성공 여부'),
@@ -4184,15 +4184,8 @@ export const SignInControllerFindPasswordResponse = zod.object({
 /**
  * @summary 기능 - 비밀번호 초기화
  */
-
-export const signInControllerResetPasswordBodyTokenMin = 6;
-export const signInControllerResetPasswordBodyTokenMax = 6;
-
-
-
 export const SignInControllerResetPasswordBody = zod.object({
-  "identifier": zod.string().min(1),
-  "token": zod.string().min(signInControllerResetPasswordBodyTokenMin).max(signInControllerResetPasswordBodyTokenMax),
+  "token": zod.string(),
   "password": zod.string(),
   "confirmPassword": zod.string()
 })
@@ -4219,54 +4212,54 @@ export const SignUpControllerGetTermsQueryParams = zod.object({
   "token": zod.string().optional()
 })
 
-export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserSessionsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserSessionsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserSessionsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserSessionsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserAccountFailCountDefault = 0;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemTermStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemTermCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryTermsItemStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryTermsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryTermsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemTermStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemTermCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserTermAgreementsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUserUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryTermsItemStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryTermsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryTermsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const signUpControllerGetTermsResponseTwoDataItemCategoryIsActiveDefault = true;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCategoryUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserSessionsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserSessionsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCategoryUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserSessionsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserSessionsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserAccountFailCountDefault = 0;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermCategoryIsActiveDefault = true;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetTermsResponseTwoDataItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserTermAgreementsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUserUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetTermsResponseTwoDataItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const signUpControllerGetTermsResponseTwoDataItemIsActiveDefault = true;
 
 export const SignUpControllerGetTermsResponse = zod.object({
@@ -4640,11 +4633,11 @@ export const SignUpControllerGetTermsResponse = zod.object({
 /**
  * @summary 1-2. 회원정보입력 - 이메일 중복 확인
  */
-export const SignUpControllerCheckEmailBody = zod.object({
+export const SignUpControllerCheckEmailConflictBody = zod.object({
   "email": zod.email()
 })
 
-export const SignUpControllerCheckEmailResponse = zod.object({
+export const SignUpControllerCheckEmailConflictResponse = zod.object({
   "success": zod.boolean().describe('성공 여부'),
   "code": zod.string().describe('응답 코드'),
   "message": zod.string().nullish().describe('응답 메시지'),
@@ -4742,14 +4735,8 @@ export const SignUpControllerCreateAccountResponse = zod.object({
 /**
  * @summary 1-4. 회원검증완료 - 인증메일 확인
  */
-export const signUpControllerConfirmEmailVerificationQueryTokenMin = 6;
-export const signUpControllerConfirmEmailVerificationQueryTokenMax = 6;
-
-
-
 export const SignUpControllerConfirmEmailVerificationQueryParams = zod.object({
-  "id": zod.string(),
-  "token": zod.string().min(signUpControllerConfirmEmailVerificationQueryTokenMin).max(signUpControllerConfirmEmailVerificationQueryTokenMax)
+  "token": zod.string()
 })
 
 export const SignUpControllerConfirmEmailVerificationResponse = zod.object({
@@ -4796,62 +4783,62 @@ export const SignUpControllerGetInvitationQueryParams = zod.object({
   "token": zod.string()
 })
 
-export const signUpControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterSessionsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterSessionsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterSessionsItemActiveOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterSessionsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterSessionsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const signUpControllerGetInvitationResponseTwoDataInviterAccountFailCountDefault = 0;
-export const signUpControllerGetInvitationResponseTwoDataInviterAccountCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterAccountUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterMemberOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterMemberOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterMemberOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterMemberOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterMemberCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterMemberUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterAccountCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterAccountUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterMemberOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterMemberOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterMemberOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterMemberOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterMemberCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterMemberUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryIsActiveDefault = true;
-export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataInviterUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserSessionsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserSessionsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemTermUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterTermAgreementsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataInviterUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserSessionsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserSessionsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserAccountFailCountDefault = 0;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserAccountCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserAccountUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermCategoryIsActiveDefault = true;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermStartDateDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationRolesItemCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationRolesItemUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataOrganizationUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataCreatedAtDefault = `2026-04-08T02:52:12.861Z`;
-export const signUpControllerGetInvitationResponseTwoDataUpdatedAtDefault = `2026-04-08T02:52:12.861Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermCategoryCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermCategoryUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermStartDateDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemTermUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserTermAgreementsItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUserUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationMembersItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationRolesItemCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationRolesItemUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataOrganizationUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataCreatedAtDefault = `2026-04-09T01:27:46.462Z`;
+export const signUpControllerGetInvitationResponseTwoDataUpdatedAtDefault = `2026-04-09T01:27:46.462Z`;
 
 export const SignUpControllerGetInvitationResponse = zod.object({
   "success": zod.boolean().describe('성공 여부'),

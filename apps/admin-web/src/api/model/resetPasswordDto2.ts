@@ -7,12 +7,6 @@
  */
 
 export interface ResetPasswordDto2 {
-  /** @minLength 1 */
-  identifier: string;
-  /**
-   * @minLength 6
-   * @maxLength 6
-   */
   token: string;
   password: string;
   confirmPassword: string;

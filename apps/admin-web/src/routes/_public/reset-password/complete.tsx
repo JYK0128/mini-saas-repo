@@ -1,12 +1,7 @@
 import { Button } from '@repo/ui';
 import { createFileRoute, Link } from '@tanstack/react-router';
-import { z } from 'zod';
 
 export const Route = createFileRoute('/_public/reset-password/complete')({
-  validateSearch: z.object({
-    email: z.string().optional(),
-    token: z.string().optional(),
-  }),
   component: RouteComponent,
 });
 

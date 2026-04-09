@@ -5,7 +5,8 @@
  * The Admin API description
  * OpenAPI spec version: 1.0
  */
+import type { BaseResponse } from './baseResponse';
 
-export type SignUpControllerConfirmEmailVerificationParams = {
-token: string;
+export type SignUpControllerCheckEmailConflict200 = BaseResponse & {
+  data: boolean;
 };

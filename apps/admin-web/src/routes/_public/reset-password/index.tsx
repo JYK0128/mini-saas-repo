@@ -1,4 +1,4 @@
-import { Button, Input, Label } from '@repo/ui';
+import { Button } from '@repo/ui';
 import { useAppForm } from '@repo/ui/components/form/context';
 import { createFileRoute } from '@tanstack/react-router';
 import { z } from 'zod';
@@ -8,20 +8,18 @@ import { SignInControllerResetPasswordBody } from '@/api/zod';
 
 export const Route = createFileRoute('/_public/reset-password/')({
   validateSearch: z.object({
-    email: z.string(),
     token: z.string(),
   }),
   component: RouteComponent,
 });
 
 function RouteComponent() {
-  const { email, token } = Route.useSearch();
+  const { token } = Route.useSearch();
   const { mutateAsync: resetPassword } = useSignInControllerResetPassword();
 
   const form = useAppForm({
     defaultValues: {
-      identifier: email,
-      token: token,
+      token,
       password: '',
       confirmPassword: '',
     },
@@ -33,8 +31,7 @@ function RouteComponent() {
     onSubmit: async ({ value }) => {
       await resetPassword({
         data: {
-          identifier: String(email),
-          token: String(token),
+          token,
           password: value.password,
           confirmPassword: value.confirmPassword,
         },
@@ -47,15 +44,6 @@ function RouteComponent() {
       <form.Layout onSubmit={() => void form.handleSubmit()}>
         <form.FieldSet>
           <form.FieldGroup>
-            <div className="grid gap-2 text-left">
-              <Label htmlFor="reset-email">이메일</Label>
-              <Input id="reset-email" value={String(email ?? '')} readOnly disabled />
-            </div>
-            <div className="grid gap-2 text-left">
-              <Label htmlFor="reset-token">인증 코드</Label>
-              <Input id="reset-token" value={String(token ?? '')} readOnly disabled />
-            </div>
-
             <form.AppField name="password">
               {({ Input }) => (
                 <Input

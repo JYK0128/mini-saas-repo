@@ -14,6 +14,7 @@ export interface Organization {
   roles: OrganizationRole[];
   name: string;
   slug: string;
+  /** @deprecated */
   logo?: string;
   metadata?: OrganizationMetadataProperty;
   id: string;

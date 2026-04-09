@@ -6,6 +6,6 @@
  * OpenAPI spec version: 1.0
  */
 
-export type ServiceSettingsControllerUploadLogoBody = {
+export type ServiceSettingsControllerUploadLogoImageBody = {
   file: Blob;
 };

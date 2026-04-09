@@ -8,6 +8,6 @@
 import type { BaseResponse } from './baseResponse';
 import type { ServiceSettingsResponseDto } from './serviceSettingsResponseDto';
 
-export type ServiceSettingsControllerFindOne200 = BaseResponse & {
+export type ServiceSettingsControllerUpdateOrganization200 = BaseResponse & {
   data: ServiceSettingsResponseDto;
 };

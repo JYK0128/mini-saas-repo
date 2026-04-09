@@ -1,54 +1,75 @@
+import path from 'node:path';
+
 import { HttpStatus, Injectable } from '@nestjs/common';
+import fs from 'fs/promises';
 
 import { ErrorException } from '@/common/exceptions/error.exception';
+import type { Organization } from '@/entities';
 import { OrganizationRepository } from '@/entities/organization/organization.repository';
 
 import { ServiceSettingsResponseDto, UpdateServiceSettingsDto } from './dto/settings.dto';
 
-interface ServiceSettings {
-  displayName?: string
-  logoUrl?: string
-}
+const MAX_PROFILE_IMAGE_SIZE = 5 * 1024 * 1024;
+const ALLOWED_IMAGE_MIME_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp']);
+const ALLOWED_IMAGE_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp']);
+const LOGO_IMAGE_PREFIX = '/uploads/logo/';
 
 @Injectable()
 export class SettingsService {
   constructor(private readonly organizationRepo: OrganizationRepository) { }
 
-  async findOne(organizationId: string): Promise<ServiceSettingsResponseDto> {
-    const org = await this.organizationRepo.findOne(organizationId);
-    if (!org) {
-      throw new ErrorException('ORGANIZATION_NOT_FOUND', HttpStatus.NOT_FOUND);
-    }
-
-    const settings = (org.metadata.settings as ServiceSettings) || {};
-
-    return {
-      displayName: settings.displayName || org.name,
-      logoUrl: org.metadata.logoUrl,
-      updatedAt: org.updatedAt,
-    };
+  async updateOrganization(organization: Organization, dto: UpdateServiceSettingsDto): Promise<ServiceSettingsResponseDto> {
+    organization.metadata.displayname = dto.displayName;
+    return Promise.resolve(organization);
   }
 
-  async update(organizationId: string, dto: UpdateServiceSettingsDto): Promise<ServiceSettingsResponseDto> {
-    const org = await this.organizationRepo.findOne(organizationId);
-    if (!org) {
-      throw new ErrorException('ORGANIZATION_NOT_FOUND', HttpStatus.NOT_FOUND);
+  /**
+     * 파일 디스크 삭제
+     */
+  private async removeUploadedFile(
+    filePath: string,
+  ) {
+    try {
+      await fs.unlink(filePath);
+    }
+    catch {
+      throw new ErrorException('FILE_NOT_DELETED', HttpStatus.CONFLICT);
+    }
+  }
+
+  /**
+     * 프로파일 업로드
+     */
+  async uploadLogoImage(
+    organization: Organization,
+    file?: Express.Multer.File,
+  ) {
+    if (!file) {
+      throw new ErrorException('FILE_REQUIRED', HttpStatus.BAD_REQUEST);
     }
 
-    const { logoUrl, ...rest } = dto;
-
-    if (logoUrl !== undefined) {
-      org.metadata.logoUrl = logoUrl;
+    const fileExt = path.extname(file.originalname).toLowerCase();
+    if (
+      !ALLOWED_IMAGE_MIME_TYPES.has(file.mimetype)
+      || !ALLOWED_IMAGE_EXTENSIONS.has(fileExt)
+    ) {
+      await this.removeUploadedFile(file.path);
+      throw new ErrorException('INVALID_IMAGE_TYPE', HttpStatus.BAD_REQUEST);
     }
 
-    const currentSettings = (org.metadata.settings as ServiceSettings) || {};
-    org.metadata.settings = {
-      ...currentSettings,
-      ...rest,
-    };
+    if (file.size > MAX_PROFILE_IMAGE_SIZE) {
+      await this.removeUploadedFile(file.path);
+      throw new ErrorException('FILE_TOO_LARGE', HttpStatus.PAYLOAD_TOO_LARGE);
+    }
 
-    await this.organizationRepo.getEntityManager().flush();
+    const previousImage = organization.metadata.logoUrl;
+    if (previousImage && previousImage.startsWith(LOGO_IMAGE_PREFIX)) {
+      const fileName = previousImage.replace(LOGO_IMAGE_PREFIX, '');
+      const filePath = path.join(process.cwd(), 'uploads', 'logo', fileName);
+      await this.removeUploadedFile(filePath).catch(() => {});
+    }
 
-    return this.findOne(organizationId);
+    const imgPath = `${LOGO_IMAGE_PREFIX}${file.filename}`;
+    organization.metadata.logoUrl = imgPath;
   }
 }

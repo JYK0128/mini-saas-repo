@@ -1,4 +1,5 @@
 export * from './bypass.decorator';
+export * from './cookies.decorator';
 export * from './match.decorator';
 export * from './permission.decorator';
 export * from './public.decorator';

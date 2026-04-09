@@ -4,6 +4,7 @@ import * as bcrypt from 'bcrypt';
 import { verify } from 'otplib';
 
 import { ErrorException } from '@/common/exceptions/error.exception';
+import { signEmailToken, verifyEmailToken } from '@/common/tools/JWT';
 import { mailer } from '@/common/tools/Mailer';
 import { generateOtp } from '@/common/tools/OTP';
 import { AccountRepository, MemberRepository, OrganizationRepository, OrganizationType, ProviderType,
@@ -208,12 +209,12 @@ export class SignInService {
     this.verificationRepo.createVerification(
       email,
       secret,
-      60 * 60 * 1000,
+      30 * 60 * 1000,
     );
 
-    const url = new URL('/forgot-password', process.env.WEB_URL);
-    url.searchParams.set('identifier', email);
-    url.searchParams.set('token', token);
+    const verificationId = await signEmailToken({ email, token });
+    const url = new URL('/reset-password', process.env.WEB_URL);
+    url.searchParams.set('token', verificationId);
 
     const resetUrl = url.toString();
     await mailer.sendMail({
@@ -248,21 +249,27 @@ export class SignInService {
    */
   @Transactional()
   async resetPassword({
-    identifier,
-    token,
+    token, // This is now the JWT
     password,
   }: ResetPasswordDto) {
-    const verification = await this.verificationRepo.findActiveVerification(identifier);
+    const payload = await verifyEmailToken(token);
+    if (!payload) {
+      throw new ErrorException('INVALID_VERIFICATION_TOKEN', HttpStatus.BAD_REQUEST);
+    }
+
+    const verification = await this.verificationRepo.findLast({
+      identifier: payload.email,
+    });
     if (!verification?.value) {
       throw new ErrorException('VERIFICATION_NOT_FOUND', HttpStatus.BAD_REQUEST);
     }
 
-    const isValid = await verify({
-      token,
+    const { valid } = await verify({
+      token: payload.token,
       secret: verification.value,
-      epochTolerance: 60 * 60,
+      epochTolerance: [30 * 60, 0],
     });
-    if (!isValid) {
+    if (!valid) {
       throw new ErrorException(
         'INVALID_VERIFICATION_TOKEN',
         HttpStatus.BAD_REQUEST,
@@ -271,7 +278,7 @@ export class SignInService {
 
     verification.verifiedAt = new Date();
     await this.accountRepo.nativeUpdate(
-      { accountId: identifier, providerId: ProviderType.CREDENTIAL },
+      { accountId: payload.email, providerId: ProviderType.CREDENTIAL },
       { password: bcrypt.hashSync(password, 10), failCount: 0 },
     );
   }

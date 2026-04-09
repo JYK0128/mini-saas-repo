@@ -28,7 +28,7 @@ import type {
   AuditControllerFindAll200,
   AuditControllerFindAllParams,
   ChangePasswordDto,
-  CheckEmailDto,
+  CheckEmailConflictDto,
   ConfirmPhoneVerificationDto,
   CreateAccountDto,
   CreateOrganizationDto,
@@ -66,10 +66,10 @@ import type {
   ServiceDashboardControllerGetStats200,
   ServiceDashboardControllerGetUsage200,
   ServicePricingControllerFindAll200,
-  ServiceSettingsControllerFindOne200,
-  ServiceSettingsControllerUpdate200,
-  ServiceSettingsControllerUploadLogo200,
-  ServiceSettingsControllerUploadLogoBody,
+  ServiceSettingsControllerGetOrganization200,
+  ServiceSettingsControllerUpdateOrganization200,
+  ServiceSettingsControllerUploadLogoImage200,
+  ServiceSettingsControllerUploadLogoImageBody,
   ServiceSettlementControllerFindAll200,
   ServiceStaffControllerAcceptInvite200,
   ServiceStaffControllerAcceptInviteParams,
@@ -102,7 +102,7 @@ import type {
   SignInControllerSignOut200,
   SignUpControllerAcceptInvite200,
   SignUpControllerAcceptInviteParams,
-  SignUpControllerCheckEmail200,
+  SignUpControllerCheckEmailConflict200,
   SignUpControllerConfirmEmailVerification200,
   SignUpControllerConfirmEmailVerificationParams,
   SignUpControllerConfirmPhoneVerification200,
@@ -2912,13 +2912,13 @@ export function useServicePricingControllerFindAll<TData = Awaited<ReturnType<ty
 /**
  * @summary 서비스 설정 조회
  */
-export const serviceSettingsControllerFindOne = (
+export const serviceSettingsControllerGetOrganization = (
     
  signal?: AbortSignal
 ) => {
       
       
-      return axiosInstance<ServiceSettingsControllerFindOne200>(
+      return axiosInstance<ServiceSettingsControllerGetOrganization200>(
       {url: `/service/settings`, method: 'GET', signal
     },
       );
@@ -2927,69 +2927,69 @@ export const serviceSettingsControllerFindOne = (
 
 
 
-export const getServiceSettingsControllerFindOneQueryKey = () => {
+export const getServiceSettingsControllerGetOrganizationQueryKey = () => {
     return [
     `/service/settings`
     ] as const;
     }
 
     
-export const getServiceSettingsControllerFindOneQueryOptions = <TData = Awaited<ReturnType<typeof serviceSettingsControllerFindOne>>, TError = ErrorType<unknown>>( options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof serviceSettingsControllerFindOne>>, TError, TData>>, }
+export const getServiceSettingsControllerGetOrganizationQueryOptions = <TData = Awaited<ReturnType<typeof serviceSettingsControllerGetOrganization>>, TError = ErrorType<unknown>>( options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof serviceSettingsControllerGetOrganization>>, TError, TData>>, }
 ) => {
 
 const {query: queryOptions} = options ?? {};
 
-  const queryKey =  queryOptions?.queryKey ?? getServiceSettingsControllerFindOneQueryKey();
+  const queryKey =  queryOptions?.queryKey ?? getServiceSettingsControllerGetOrganizationQueryKey();
 
   
 
-    const queryFn: QueryFunction<Awaited<ReturnType<typeof serviceSettingsControllerFindOne>>> = ({ signal }) => serviceSettingsControllerFindOne(signal);
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof serviceSettingsControllerGetOrganization>>> = ({ signal }) => serviceSettingsControllerGetOrganization(signal);
 
       
 
       
 
-   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof serviceSettingsControllerFindOne>>, TError, TData> & { queryKey: DataTag<QueryKey, TData, TError> }
+   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof serviceSettingsControllerGetOrganization>>, TError, TData> & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type ServiceSettingsControllerFindOneQueryResult = NonNullable<Awaited<ReturnType<typeof serviceSettingsControllerFindOne>>>
-export type ServiceSettingsControllerFindOneQueryError = ErrorType<unknown>
+export type ServiceSettingsControllerGetOrganizationQueryResult = NonNullable<Awaited<ReturnType<typeof serviceSettingsControllerGetOrganization>>>
+export type ServiceSettingsControllerGetOrganizationQueryError = ErrorType<unknown>
 
 
-export function useServiceSettingsControllerFindOne<TData = Awaited<ReturnType<typeof serviceSettingsControllerFindOne>>, TError = ErrorType<unknown>>(
-  options: { query:Partial<UseQueryOptions<Awaited<ReturnType<typeof serviceSettingsControllerFindOne>>, TError, TData>> & Pick<
+export function useServiceSettingsControllerGetOrganization<TData = Awaited<ReturnType<typeof serviceSettingsControllerGetOrganization>>, TError = ErrorType<unknown>>(
+  options: { query:Partial<UseQueryOptions<Awaited<ReturnType<typeof serviceSettingsControllerGetOrganization>>, TError, TData>> & Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof serviceSettingsControllerFindOne>>,
+          Awaited<ReturnType<typeof serviceSettingsControllerGetOrganization>>,
           TError,
-          Awaited<ReturnType<typeof serviceSettingsControllerFindOne>>
+          Awaited<ReturnType<typeof serviceSettingsControllerGetOrganization>>
         > , 'initialData'
       >, }
  , queryClient?: QueryClient
   ):  DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useServiceSettingsControllerFindOne<TData = Awaited<ReturnType<typeof serviceSettingsControllerFindOne>>, TError = ErrorType<unknown>>(
-  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof serviceSettingsControllerFindOne>>, TError, TData>> & Pick<
+export function useServiceSettingsControllerGetOrganization<TData = Awaited<ReturnType<typeof serviceSettingsControllerGetOrganization>>, TError = ErrorType<unknown>>(
+  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof serviceSettingsControllerGetOrganization>>, TError, TData>> & Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof serviceSettingsControllerFindOne>>,
+          Awaited<ReturnType<typeof serviceSettingsControllerGetOrganization>>,
           TError,
-          Awaited<ReturnType<typeof serviceSettingsControllerFindOne>>
+          Awaited<ReturnType<typeof serviceSettingsControllerGetOrganization>>
         > , 'initialData'
       >, }
  , queryClient?: QueryClient
   ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useServiceSettingsControllerFindOne<TData = Awaited<ReturnType<typeof serviceSettingsControllerFindOne>>, TError = ErrorType<unknown>>(
-  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof serviceSettingsControllerFindOne>>, TError, TData>>, }
+export function useServiceSettingsControllerGetOrganization<TData = Awaited<ReturnType<typeof serviceSettingsControllerGetOrganization>>, TError = ErrorType<unknown>>(
+  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof serviceSettingsControllerGetOrganization>>, TError, TData>>, }
  , queryClient?: QueryClient
   ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
 /**
  * @summary 서비스 설정 조회
  */
 
-export function useServiceSettingsControllerFindOne<TData = Awaited<ReturnType<typeof serviceSettingsControllerFindOne>>, TError = ErrorType<unknown>>(
-  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof serviceSettingsControllerFindOne>>, TError, TData>>, }
+export function useServiceSettingsControllerGetOrganization<TData = Awaited<ReturnType<typeof serviceSettingsControllerGetOrganization>>, TError = ErrorType<unknown>>(
+  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof serviceSettingsControllerGetOrganization>>, TError, TData>>, }
  , queryClient?: QueryClient 
  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
 
-  const queryOptions = getServiceSettingsControllerFindOneQueryOptions(options)
+  const queryOptions = getServiceSettingsControllerGetOrganizationQueryOptions(options)
 
   const query = useQuery(queryOptions, queryClient) as  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 
@@ -3003,13 +3003,13 @@ export function useServiceSettingsControllerFindOne<TData = Awaited<ReturnType<t
 /**
  * @summary 서비스 설정 수정
  */
-export const serviceSettingsControllerUpdate = (
+export const serviceSettingsControllerUpdateOrganization = (
     updateServiceSettingsDto: UpdateServiceSettingsDto,
  signal?: AbortSignal
 ) => {
       
       
-      return axiosInstance<ServiceSettingsControllerUpdate200>(
+      return axiosInstance<ServiceSettingsControllerUpdateOrganization200>(
       {url: `/service/settings`, method: 'PATCH',
       headers: {'Content-Type': 'application/json', },
       data: updateServiceSettingsDto, signal
@@ -3019,11 +3019,11 @@ export const serviceSettingsControllerUpdate = (
   
 
 
-export const getServiceSettingsControllerUpdateMutationOptions = <TError = ErrorType<unknown>,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof serviceSettingsControllerUpdate>>, TError,{data: UpdateServiceSettingsDto}, TContext>, }
-): UseMutationOptions<Awaited<ReturnType<typeof serviceSettingsControllerUpdate>>, TError,{data: UpdateServiceSettingsDto}, TContext> => {
+export const getServiceSettingsControllerUpdateOrganizationMutationOptions = <TError = ErrorType<unknown>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof serviceSettingsControllerUpdateOrganization>>, TError,{data: UpdateServiceSettingsDto}, TContext>, }
+): UseMutationOptions<Awaited<ReturnType<typeof serviceSettingsControllerUpdateOrganization>>, TError,{data: UpdateServiceSettingsDto}, TContext> => {
 
-const mutationKey = ['serviceSettingsControllerUpdate'];
+const mutationKey = ['serviceSettingsControllerUpdateOrganization'];
 const {mutation: mutationOptions} = options ?
       options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
       options
@@ -3033,10 +3033,10 @@ const {mutation: mutationOptions} = options ?
       
 
 
-      const mutationFn: MutationFunction<Awaited<ReturnType<typeof serviceSettingsControllerUpdate>>, {data: UpdateServiceSettingsDto}> = (props) => {
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof serviceSettingsControllerUpdateOrganization>>, {data: UpdateServiceSettingsDto}> = (props) => {
           const {data} = props ?? {};
 
-          return  serviceSettingsControllerUpdate(data,)
+          return  serviceSettingsControllerUpdateOrganization(data,)
         }
 
 
@@ -3046,36 +3046,36 @@ const {mutation: mutationOptions} = options ?
 
   return  { mutationFn, ...mutationOptions }}
 
-    export type ServiceSettingsControllerUpdateMutationResult = NonNullable<Awaited<ReturnType<typeof serviceSettingsControllerUpdate>>>
-    export type ServiceSettingsControllerUpdateMutationBody = UpdateServiceSettingsDto
-    export type ServiceSettingsControllerUpdateMutationError = ErrorType<unknown>
+    export type ServiceSettingsControllerUpdateOrganizationMutationResult = NonNullable<Awaited<ReturnType<typeof serviceSettingsControllerUpdateOrganization>>>
+    export type ServiceSettingsControllerUpdateOrganizationMutationBody = UpdateServiceSettingsDto
+    export type ServiceSettingsControllerUpdateOrganizationMutationError = ErrorType<unknown>
 
     /**
  * @summary 서비스 설정 수정
  */
-export const useServiceSettingsControllerUpdate = <TError = ErrorType<unknown>,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof serviceSettingsControllerUpdate>>, TError,{data: UpdateServiceSettingsDto}, TContext>, }
+export const useServiceSettingsControllerUpdateOrganization = <TError = ErrorType<unknown>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof serviceSettingsControllerUpdateOrganization>>, TError,{data: UpdateServiceSettingsDto}, TContext>, }
  , queryClient?: QueryClient): UseMutationResult<
-        Awaited<ReturnType<typeof serviceSettingsControllerUpdate>>,
+        Awaited<ReturnType<typeof serviceSettingsControllerUpdateOrganization>>,
         TError,
         {data: UpdateServiceSettingsDto},
         TContext
       > => {
-      return useMutation(getServiceSettingsControllerUpdateMutationOptions(options), queryClient);
+      return useMutation(getServiceSettingsControllerUpdateOrganizationMutationOptions(options), queryClient);
     }
     
 /**
  * @summary 로고 이미지 업로드
  */
-export const serviceSettingsControllerUploadLogo = (
-    serviceSettingsControllerUploadLogoBody: ServiceSettingsControllerUploadLogoBody,
+export const serviceSettingsControllerUploadLogoImage = (
+    serviceSettingsControllerUploadLogoImageBody: ServiceSettingsControllerUploadLogoImageBody,
  signal?: AbortSignal
 ) => {
       
       const formData = new FormData();
-formData.append(`file`, serviceSettingsControllerUploadLogoBody.file);
+formData.append(`file`, serviceSettingsControllerUploadLogoImageBody.file);
 
-      return axiosInstance<ServiceSettingsControllerUploadLogo200>(
+      return axiosInstance<ServiceSettingsControllerUploadLogoImage200>(
       {url: `/service/settings/logo`, method: 'POST',
        data: formData, signal
     },
@@ -3084,11 +3084,11 @@ formData.append(`file`, serviceSettingsControllerUploadLogoBody.file);
   
 
 
-export const getServiceSettingsControllerUploadLogoMutationOptions = <TError = ErrorType<unknown>,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof serviceSettingsControllerUploadLogo>>, TError,{data: ServiceSettingsControllerUploadLogoBody}, TContext>, }
-): UseMutationOptions<Awaited<ReturnType<typeof serviceSettingsControllerUploadLogo>>, TError,{data: ServiceSettingsControllerUploadLogoBody}, TContext> => {
+export const getServiceSettingsControllerUploadLogoImageMutationOptions = <TError = ErrorType<unknown>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof serviceSettingsControllerUploadLogoImage>>, TError,{data: ServiceSettingsControllerUploadLogoImageBody}, TContext>, }
+): UseMutationOptions<Awaited<ReturnType<typeof serviceSettingsControllerUploadLogoImage>>, TError,{data: ServiceSettingsControllerUploadLogoImageBody}, TContext> => {
 
-const mutationKey = ['serviceSettingsControllerUploadLogo'];
+const mutationKey = ['serviceSettingsControllerUploadLogoImage'];
 const {mutation: mutationOptions} = options ?
       options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
       options
@@ -3098,10 +3098,10 @@ const {mutation: mutationOptions} = options ?
       
 
 
-      const mutationFn: MutationFunction<Awaited<ReturnType<typeof serviceSettingsControllerUploadLogo>>, {data: ServiceSettingsControllerUploadLogoBody}> = (props) => {
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof serviceSettingsControllerUploadLogoImage>>, {data: ServiceSettingsControllerUploadLogoImageBody}> = (props) => {
           const {data} = props ?? {};
 
-          return  serviceSettingsControllerUploadLogo(data,)
+          return  serviceSettingsControllerUploadLogoImage(data,)
         }
 
 
@@ -3111,22 +3111,22 @@ const {mutation: mutationOptions} = options ?
 
   return  { mutationFn, ...mutationOptions }}
 
-    export type ServiceSettingsControllerUploadLogoMutationResult = NonNullable<Awaited<ReturnType<typeof serviceSettingsControllerUploadLogo>>>
-    export type ServiceSettingsControllerUploadLogoMutationBody = ServiceSettingsControllerUploadLogoBody
-    export type ServiceSettingsControllerUploadLogoMutationError = ErrorType<unknown>
+    export type ServiceSettingsControllerUploadLogoImageMutationResult = NonNullable<Awaited<ReturnType<typeof serviceSettingsControllerUploadLogoImage>>>
+    export type ServiceSettingsControllerUploadLogoImageMutationBody = ServiceSettingsControllerUploadLogoImageBody
+    export type ServiceSettingsControllerUploadLogoImageMutationError = ErrorType<unknown>
 
     /**
  * @summary 로고 이미지 업로드
  */
-export const useServiceSettingsControllerUploadLogo = <TError = ErrorType<unknown>,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof serviceSettingsControllerUploadLogo>>, TError,{data: ServiceSettingsControllerUploadLogoBody}, TContext>, }
+export const useServiceSettingsControllerUploadLogoImage = <TError = ErrorType<unknown>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof serviceSettingsControllerUploadLogoImage>>, TError,{data: ServiceSettingsControllerUploadLogoImageBody}, TContext>, }
  , queryClient?: QueryClient): UseMutationResult<
-        Awaited<ReturnType<typeof serviceSettingsControllerUploadLogo>>,
+        Awaited<ReturnType<typeof serviceSettingsControllerUploadLogoImage>>,
         TError,
-        {data: ServiceSettingsControllerUploadLogoBody},
+        {data: ServiceSettingsControllerUploadLogoImageBody},
         TContext
       > => {
-      return useMutation(getServiceSettingsControllerUploadLogoMutationOptions(options), queryClient);
+      return useMutation(getServiceSettingsControllerUploadLogoImageMutationOptions(options), queryClient);
     }
     
 /**
@@ -4755,27 +4755,27 @@ export function useSignUpControllerGetTerms<TData = Awaited<ReturnType<typeof si
 /**
  * @summary 1-2. 회원정보입력 - 이메일 중복 확인
  */
-export const signUpControllerCheckEmail = (
-    checkEmailDto: CheckEmailDto,
+export const signUpControllerCheckEmailConflict = (
+    checkEmailConflictDto: CheckEmailConflictDto,
  signal?: AbortSignal
 ) => {
       
       
-      return axiosInstance<SignUpControllerCheckEmail200>(
+      return axiosInstance<SignUpControllerCheckEmailConflict200>(
       {url: `/sign-up/email/check`, method: 'POST',
       headers: {'Content-Type': 'application/json', },
-      data: checkEmailDto, signal
+      data: checkEmailConflictDto, signal
     },
       );
     }
   
 
 
-export const getSignUpControllerCheckEmailMutationOptions = <TError = ErrorType<unknown>,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof signUpControllerCheckEmail>>, TError,{data: CheckEmailDto}, TContext>, }
-): UseMutationOptions<Awaited<ReturnType<typeof signUpControllerCheckEmail>>, TError,{data: CheckEmailDto}, TContext> => {
+export const getSignUpControllerCheckEmailConflictMutationOptions = <TError = ErrorType<unknown>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof signUpControllerCheckEmailConflict>>, TError,{data: CheckEmailConflictDto}, TContext>, }
+): UseMutationOptions<Awaited<ReturnType<typeof signUpControllerCheckEmailConflict>>, TError,{data: CheckEmailConflictDto}, TContext> => {
 
-const mutationKey = ['signUpControllerCheckEmail'];
+const mutationKey = ['signUpControllerCheckEmailConflict'];
 const {mutation: mutationOptions} = options ?
       options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
       options
@@ -4785,10 +4785,10 @@ const {mutation: mutationOptions} = options ?
       
 
 
-      const mutationFn: MutationFunction<Awaited<ReturnType<typeof signUpControllerCheckEmail>>, {data: CheckEmailDto}> = (props) => {
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof signUpControllerCheckEmailConflict>>, {data: CheckEmailConflictDto}> = (props) => {
           const {data} = props ?? {};
 
-          return  signUpControllerCheckEmail(data,)
+          return  signUpControllerCheckEmailConflict(data,)
         }
 
 
@@ -4798,22 +4798,22 @@ const {mutation: mutationOptions} = options ?
 
   return  { mutationFn, ...mutationOptions }}
 
-    export type SignUpControllerCheckEmailMutationResult = NonNullable<Awaited<ReturnType<typeof signUpControllerCheckEmail>>>
-    export type SignUpControllerCheckEmailMutationBody = CheckEmailDto
-    export type SignUpControllerCheckEmailMutationError = ErrorType<unknown>
+    export type SignUpControllerCheckEmailConflictMutationResult = NonNullable<Awaited<ReturnType<typeof signUpControllerCheckEmailConflict>>>
+    export type SignUpControllerCheckEmailConflictMutationBody = CheckEmailConflictDto
+    export type SignUpControllerCheckEmailConflictMutationError = ErrorType<unknown>
 
     /**
  * @summary 1-2. 회원정보입력 - 이메일 중복 확인
  */
-export const useSignUpControllerCheckEmail = <TError = ErrorType<unknown>,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof signUpControllerCheckEmail>>, TError,{data: CheckEmailDto}, TContext>, }
+export const useSignUpControllerCheckEmailConflict = <TError = ErrorType<unknown>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof signUpControllerCheckEmailConflict>>, TError,{data: CheckEmailConflictDto}, TContext>, }
  , queryClient?: QueryClient): UseMutationResult<
-        Awaited<ReturnType<typeof signUpControllerCheckEmail>>,
+        Awaited<ReturnType<typeof signUpControllerCheckEmailConflict>>,
         TError,
-        {data: CheckEmailDto},
+        {data: CheckEmailConflictDto},
         TContext
       > => {
-      return useMutation(getSignUpControllerCheckEmailMutationOptions(options), queryClient);
+      return useMutation(getSignUpControllerCheckEmailConflictMutationOptions(options), queryClient);
     }
     
 /**

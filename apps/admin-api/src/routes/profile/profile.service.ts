@@ -87,7 +87,6 @@ export class ProfileService {
 
     const imgPath = `${PROFILE_IMAGE_PREFIX}${file.filename}`;
     user.image = imgPath;
-    return { image: imgPath };
   }
 
   /**

@@ -21,25 +21,24 @@ export class ServiceSettingsController {
   @ApiGenericResponse(ServiceSettingsResponseDto)
   @Get()
   @Rule(OrganizationType.BUSINESS, [RoleType.OWNER, RoleType.ADMIN])
-  async findOne(@Session() session: SessionData) {
-    const organizationId = session.user?.member?.organization.id;
-    if (!organizationId) {
+  async getOrganization(@Session() session: SessionData) {
+    const organization = session.user?.member?.organization;
+    if (!organization) {
       throw new ErrorException('ORGANIZATION_NOT_FOUND', HttpStatus.NOT_FOUND);
     }
-    const settings = await this.settingsService.findOne(organizationId);
-    return ApiResponse.ok(settings);
+    return ApiResponse.ok(organization);
   }
 
   @ApiOperation({ summary: '서비스 설정 수정' })
   @ApiGenericResponse(ServiceSettingsResponseDto)
   @Patch()
   @Rule(OrganizationType.BUSINESS, [RoleType.OWNER, RoleType.ADMIN])
-  async update(@Session() session: SessionData, @Body() dto: UpdateServiceSettingsDto) {
-    const organizationId = session.user?.member?.organization.id;
-    if (!organizationId) {
+  async updateOrganization(@Session() session: SessionData, @Body() dto: UpdateServiceSettingsDto) {
+    const organization = session.user?.member?.organization;
+    if (!organization) {
       throw new ErrorException('ORGANIZATION_NOT_FOUND', HttpStatus.NOT_FOUND);
     }
-    const settings = await this.settingsService.update(organizationId, dto);
+    const settings = await this.settingsService.updateOrganization(organization, dto);
     return ApiResponse.ok(settings);
   }
 
@@ -61,8 +60,15 @@ export class ServiceSettingsController {
   @Post('logo')
   @UseInterceptors(FileInterceptor('file'))
   @Rule(OrganizationType.BUSINESS, [RoleType.OWNER, RoleType.ADMIN])
-  async uploadLogo(@UploadedFile() file: Express.Multer.File) {
-    const url = `/uploads/branding/${file.filename}`;
-    return ApiResponse.ok({ url });
+  async uploadLogoImage(
+    @Session() session: SessionData,
+    @UploadedFile() file?: Express.Multer.File,
+  ) {
+    const organization = session.user?.member?.organization;
+    if (!organization) {
+      throw new ErrorException('ORGANIZATION_NOT_FOUND', HttpStatus.NOT_FOUND);
+    }
+    await this.settingsService.uploadLogoImage(organization, file);
+    return ApiResponse.ok(true);
   }
 }

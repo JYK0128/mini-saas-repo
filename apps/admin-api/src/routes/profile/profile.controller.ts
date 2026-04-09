@@ -65,9 +65,7 @@ export class ProfileController {
     @Session() session: SessionData,
     @UploadedFile() file?: Express.Multer.File,
   ) {
-    const res = await this.profileService.uploadProfileImage(session.user, file);
-    // 세션 동기화
-    session.user.image = res.image;
+    await this.profileService.uploadProfileImage(session.user, file);
     return ApiResponse.ok(true);
   }
 

@@ -154,7 +154,7 @@ function DisplayNameForm({ user }: { readonly user?: User }) {
     <nameForm.AppForm>
       <nameForm.Layout onSubmit={() => void nameForm.handleSubmit()}>
         <div className="flex flex-col gap-2">
-          <Label htmlFor="p-name" className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">표시 이름</Label>
+          <Label htmlFor="p-name" className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">이름</Label>
           <div className="flex gap-2">
             <nameForm.AppField name="name">
               {({ Input }) => (

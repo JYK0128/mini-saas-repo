@@ -18,7 +18,7 @@ export const Route = createFileRoute('/_protected/staff')({
 
 function RouteComponent() {
   const { isOwner } = useSessionRole();
-  const { data, isLoading, refetch } = useServiceStaffControllerFindAll();
+  const { data: staffData, isLoading, refetch } = useServiceStaffControllerFindAll();
   const { mutateAsync: inviteStaff, isPending: isInviting } = useServiceStaffControllerInvite();
   const { mutateAsync: updateStaff, isPending: isUpdating } = useServiceStaffControllerUpdate();
   const { mutateAsync: removeStaff, isPending: isRemoving } = useServiceStaffControllerRemove();
@@ -30,13 +30,13 @@ function RouteComponent() {
   const [selectedStaffHistory, setSelectedStaffHistory] = useState<StaffResponseDto | null>(null);
 
   const { activeStaff, pendingInvites } = useMemo(() => {
-    const raw = data?.data;
+    const raw = staffData?.data;
     const list = Array.isArray(raw) ? raw : [];
     return {
-      activeStaff: list.filter((s) => s.status === 'active'),
-      pendingInvites: list.filter((s) => ['pending', 'rejected', 'canceled', 'accepted'].includes(s.status)),
+      activeStaff: list.filter((s) => s.status === 'accepted'),
+      pendingInvites: list,
     };
-  }, [data]);
+  }, [staffData]);
 
   return (
     <section className="flex flex-col gap-6">
@@ -279,7 +279,7 @@ function RouteComponent() {
       </Card>
 
       <Dialog open={!!selectedStaffHistory} onOpenChange={(open) => !open && setSelectedStaffHistory(null)}>
-        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+        <DialogContent className="sm:max-w-xl max-h-100 overflow-y-auto">
           <DialogHeader>
             <DialogTitle>약관 동의 이력</DialogTitle>
             <DialogDescription>
